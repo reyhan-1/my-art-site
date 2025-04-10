@@ -1,26 +1,55 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.hero {
+  position: relative;
+  overflow: hidden;
+  transition: background-image 1s ease-in-out; /* Smooth background transition */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent overlay */
+  z-index: 0; /* Ensure the overlay is behind the content */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  .prose {
+    max-width: 65ch;
+    line-height: 1.75;
+    color: #333;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    font-weight: bold;
+    color: #1a202c;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid #2d3748;
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: #4a5568;
+  }
+
+  .prose ul,
+  .prose ol {
+    padding-left: 1.5rem;
+  }
+
+  .prose p {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+  }
 }
