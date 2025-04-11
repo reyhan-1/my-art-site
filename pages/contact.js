@@ -52,7 +52,7 @@ export default function Contact() {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
+      <h2 className="text-primary-content text-4xl font-bold text-center text-gray-900 mb-12">Contact Me</h2>
       <p className="mb-8">
         Have a question? Don’t hesitate for a moment to send me a message about a commission, available work, or upcoming collections.
       </p>

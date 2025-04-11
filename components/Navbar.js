@@ -14,7 +14,8 @@ export default function Navbar() {
     <div className="navbar bg-base-100 shadow">
       <div className="flex-1">
       <Link href="/" className="btn btn-ghost">
-          <img src="/R.png" alt="Reyhan Uyanik Art" className="h-12" />
+        <h1 className="text-primary-content font-shadows-into-light text-4xl text-gray-900">Reyhan Uyanik Art</h1>
+          {/* <img src="/R.png" alt="Reyhan Uyanik Art" className="h-12" /> */}
         </Link>
       </div>
       <div className="flex-none">
@@ -24,27 +25,27 @@ export default function Navbar() {
           }`}
         >
           <li>
-            <Link href="/originals" className="text-lg hover:underline">
+            <Link href="/originals" className="text-lg hover:scale-105">
               Originals
             </Link>
           </li>
           <li>
-            <Link href="/commissions" className="text-lg hover:underline">
+            <Link href="/commissions" className="text-lg hover:scale-105">
               Commissions
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="text-lg hover:underline">
+            <Link href="/contact" className="text-lg hover:scale-105">
               Contact
             </Link>
           </li>
           <li>
-            <Link href="/about" className="text-lg hover:underline">
+            <Link href="/about" className="text-lg hover:scale-105">
               About
             </Link>
           </li>
           <li>
-            <Link href="/art-talks" className="text-lg hover:underline">
+            <Link href="/art-talks" className="text-lg hover:scale-105">
               Art Talks
             </Link>
           </li>

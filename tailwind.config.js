@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'shadows-into-light': ['"Shadows Into Light"', 'cursive'],
+      },
       colors: {
         base100: 'oklch(22% 0.019 237.69)', 
         base200: 'oklch(20% 0.019 237.69)', 

@@ -33,7 +33,7 @@ export default function Home() {
     >
       {/* Main content */}
       <div className="relative z-10 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-10 text-white">
+        <h1 className=" md:text-4xl font-bold mb-10 text-white text-primary-content font-shadows-into-light">
           Welcome to My Painting Collection
         </h1>
 

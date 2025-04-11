@@ -8,7 +8,7 @@ export default function Navbar() {
         <a className="link link-hover">Contact</a>
       </nav>
       <form>
-        <h6 className="footer-title">Join my mailing list</h6>
+        <h6 className="font-shadows-into-light footer-title">Join my mailing list</h6>
         <fieldset className="w-80">
           <label>Be the first to know about new paintings and occasional art talks</label>
           <div className="join">

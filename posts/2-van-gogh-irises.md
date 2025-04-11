@@ -2,6 +2,7 @@
 title: "Van Gogh's 'Irises': A Masterpiece of Color and Emotion"
 date: "2025-04-10"
 image: "/van-gogh-iris.jpg"
+categories: ["painters", "paintings"]
 imagetitle: "Irises 1889 | 
 On view at Getty Center, Museum West Pavilion, Gallery W204"
 painter: "Vincent van Gogh (Dutch, 1853 - 1890)"
@@ -43,8 +44,7 @@ Visitors to the Getty can stand before this magnificent piece and witness the ra
 
 If you ever find yourself at The Getty, don't miss the chance to see *"Irises"* up close. It's a work that speaks to the complexity of the human condition, reminding us of the beauty that can be found even in moments of turmoil.
 
----
+
 
 > "Art is the most beautiful of all lies." – Vincent van Gogh 
 
----

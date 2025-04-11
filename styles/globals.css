@@ -1,6 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h6 {
+  font-family: 'Shadows Into Light', cursive;
+}
+/* body {
+  font-family: 'Poppins', sans-serif;
+} */ */
+
+/* Add smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Optional: You can add page fade transition styles */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+}
+
+
 
 .hero {
   position: relative;
