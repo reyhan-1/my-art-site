@@ -2,6 +2,7 @@ import Link from 'next/link';
 import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function ArtTalks({ posts }) {
@@ -59,7 +60,7 @@ export default function ArtTalks({ posts }) {
             <div className="group block transform transition-transform hover:scale-105">
               <div className="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="mb-4">
-                  <img
+                  <Image
                     src={image || '/default-image.jpg'}
                     alt={title}
                     className="w-full h-48 object-cover rounded-lg"

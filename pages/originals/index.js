@@ -1,6 +1,7 @@
 import Link from "next/link";
 import artworks from "@/data/artworks";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 export default function Originals() {
   return (
@@ -17,9 +18,12 @@ export default function Originals() {
             <Link href={`/originals/${art.slug}`}>
               <div className="card bg-base-100 shadow-xl hover:scale-105 transition-transform cursor-pointer">
                 <figure>
-                  <img
+                  <Image
                     src={art.image}
                     alt={art.title}
+                    layout="responsive"  // Maintains the image's natural aspect ratio
+                    width={600}         // Provide a width for the image (based on its natural size)
+                    height={400}        // Provide a height for the image (based on its natural size)
                     className="h-60 w-full object-cover"
                   />
                 </figure>

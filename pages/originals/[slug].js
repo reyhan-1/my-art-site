@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import artworks from "@/data/artworks";
 import { useCart } from "@/context/CartContext"; // Import useCart
+import Image from 'next/image';
 
 export default function PaintingDetail() {
   const router = useRouter();
@@ -22,9 +23,12 @@ export default function PaintingDetail() {
     <div className="p-10 flex flex-col md:flex-row gap-8">
       {/* Left side - Image */}
       <div className="flex-1">
-        <img
+        <Image
           src={painting.image}
           alt={painting.title}
+          layout="responsive"  // Makes the image responsive
+          width={500}          // Original aspect ratio width
+          height={300}         // Original aspect ratio height
           className="w-full rounded-xl shadow-lg"
         />
       </div>
