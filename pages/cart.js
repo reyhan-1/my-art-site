@@ -1,5 +1,6 @@
 import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Cart() {
   const { cart, removeFromCart } = useCart();
@@ -20,7 +21,7 @@ export default function Cart() {
           {cart.map((item, index) => (
             <div key={index} className="flex items-center justify-between p-4 bg-base-100 shadow-lg rounded-lg">
               <div className="flex items-center">
-                <img src={item.image} alt={item.title} className="h-16 w-16 object-cover rounded-lg mr-4" />
+                <Image src={item.image} alt={item.title} className="h-16 w-16 object-cover rounded-lg mr-4" />
                 <div>
                   <h2 className="text-xl font-semibold">{item.title}</h2>
                   <p>{item.price}</p>

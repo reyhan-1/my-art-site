@@ -3,10 +3,21 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CartProvider } from '@/context/CartContext';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 export default function App({ Component, pageProps, router }) {
   return (
     <CartProvider>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <Navbar />
       <main className="accent text-base-content">
         {/* Wrap the Component in motion.div */}
