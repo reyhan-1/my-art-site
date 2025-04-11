@@ -89,7 +89,7 @@ export default function Post({ post }) {
         </div>
       )}
 
-      <p className="text-2xl text-primary-content font-shadows-into-light"> "I put my heart and my soul into my work, and have lost my mind in the process." – Vincent van Gogh</p>
+      <p className="text-2xl text-primary-content font-shadows-into-light"> &quot;I put my heart and my soul into my work, and have lost my mind in the process.&quot;,  – Vincent van Gogh</p>
 
 
       {/* Post Content (Markdown) */}
