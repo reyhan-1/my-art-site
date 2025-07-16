@@ -1,43 +1,37 @@
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import About from '@/components/About';
+import Experience from '@/components/Experience';
+import Education from '@/components/Education';
+import Extras from '@/components/Extras';
 
 export default function Home() {
-  // Array of background images
-  const backgrounds = [
-    '/2.jpg',
-    '/5.jpg',
-    '/6.jpg',
-  ];
+  const router = useRouter();
 
-  // State to track the current background
-  const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
-
-  // Set up effect to change background every 10 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * backgrounds.length);
-      setCurrentBackground(backgrounds[randomIndex]); // Change background image
-    }, 10000); // Change every 10 seconds
-
-    return () => clearInterval(interval); // Clean up interval on component unmount
+    // Scroll to hash when the page first loads
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }, []);
 
   return (
-    <div
-      className="hero min-h-screen relative"
-      style={{
-        backgroundImage: `url(${currentBackground})`,
-        backgroundSize: 'cover', // Ensure background image covers the hero area
-        backgroundPosition: 'center', // Center the background image
-      }}
-    >
-      {/* Main content */}
-      <div className="relative z-10 text-center">
-        <h1 className=" md:text-4xl font-bold mb-10 text-white text-primary-content font-shadows-into-light">
-          Welcome to My Painting Collection
-        </h1>
-
-      </div>
+    <div className="space-y-32 px-6 md:px-20 pt-16">
+      <section id="about">
+        <About />
+      </section>
+      <section id="experience">
+        <Experience />
+      </section>
+      <section id="education">
+        <Education />
+      </section>
+      <section id="extras">
+        <Extras />
+      </section>
     </div>
   );
 }

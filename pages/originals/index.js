@@ -2,12 +2,48 @@ import Link from "next/link";
 import artworks from "@/data/artworks";
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import {useEffect, useState} from "react";
 
 export default function Originals() {
+    // Array of background images
+  const backgrounds = [
+    '/2.jpg',
+    '/5.jpg',
+    '/6.jpg',
+  ];
+
+  // State to track the current background
+  const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
+
+  // Set up effect to change background every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * backgrounds.length);
+      setCurrentBackground(backgrounds[randomIndex]); // Change background image
+    }, 10000); // Change every 10 seconds
+
+    return () => clearInterval(interval); // Clean up interval on component unmount
+  }, []);
+
   return (
     <div className="p-10">
-      <h1 className="text-primary-content text-4xl font-bold text-center text-gray-900 mb-12">Original Paintings</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div
+      className="hero min-h-screen relative"
+      style={{
+        backgroundImage: `url(${currentBackground})`,
+        backgroundSize: 'cover', // Ensure background image covers the hero area
+        backgroundPosition: 'center', // Center the background image
+      }}
+    >
+      {/* Main content */}
+      <div className="relative z-10 text-center">
+        <h1 className=" md:text-4xl font-bold mb-10 text-white text-primary-content font-shadows-into-light">
+          Welcome to My Painting Collection
+        </h1>
+
+      </div>
+    </div>
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {artworks.map((art, index) => (
           <motion.div
             key={art.slug}
@@ -38,5 +74,6 @@ export default function Originals() {
         ))}
       </div>
     </div>
+
   );
 }
