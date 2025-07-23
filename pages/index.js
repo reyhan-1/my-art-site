@@ -19,19 +19,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="space-y-32 px-6 md:px-20 pt-16">
-      <section id="about">
+    <div className="space-y-32 px-6 md:px-20 pt-20">
+      <section id="about"  className="scroll-mt-24">
         <About />
       </section>
-      <section id="experience">
+      <section id="experience"  className="scroll-mt-24">
         <Experience />
       </section>
-      <section id="education">
+      <section id="education"  className="scroll-mt-24">
         <Education />
       </section>
-      <section id="extras">
-        <Extras />
-      </section>
+      {/*<section id="extras"  className="scroll-mt-24">*/}
+      {/*  <Extras />*/}
+      {/*</section>*/}
     </div>
   );
 }

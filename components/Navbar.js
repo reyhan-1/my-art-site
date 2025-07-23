@@ -1,4 +1,4 @@
-'use client'; // Only needed if using App Router, safe to leave in
+'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -8,94 +8,78 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const scrollToSection = (id) => {
     if (router.pathname === '/') {
       const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
       router.push(`/#${id}`);
     }
+    setIsMenuOpen(false); // Close menu after click
   };
 
+  const navItems = [
+    { label: 'About', id: 'about' },
+    { label: 'Experience', id: 'experience' },
+    { label: 'Education', id: 'education' },
+  ];
+
   return (
-    <div className="navbar bg-base-100 shadow">
+    <div className="navbar fixed top-0 left-0 right-0 z-50 bg-base-100 shadow px-4">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost">
-          <h1 className="font-josefin-sans text-primary-content  text-4xl text-gray-900">
-            Reyhan Uyanik
-          </h1>
+        <Link href="/" className="btn btn-ghost text-2xl font-['Carto']">
+          Reyhan Uyanik
         </Link>
       </div>
 
-      <div className="flex-none">
-        <ul
-          className={`menu menu-horizontal px-1 space-x-4 md:flex ${
-            isMenuOpen ? 'block' : 'hidden'
-          }`}
-        >
-          <li>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="px-4 font-serif hover:text-primary"
-            >
-              About
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection('experience')}
-              className="px-4 hover:text-primary"
-            >
-              Experience
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection('education')}
-              className="px-4 hover:text-primary"
-            >
-              Education
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection('extras')}
-              className="px-4 hover:text-primary"
-            >
-              Projects & Certifications
-            </button>
-          </li>
-          <li>
-            <Link href="/originals" className="px-4 hover:text-primary">
-              Paintings
-            </Link>
-          </li>
-        </ul>
+      {/* Desktop Nav */}
+      <div className="hidden md:flex space-x-4">
+        {navItems.map(({ label, id }) => (
+          <button
+            key={id}
+            onClick={() => scrollToSection(id)}
+            className="hover:text-primary transition-colors"
+          >
+            {label}
+          </button>
+        ))}
+        <Link href="/originals" className="hover:text-primary transition-colors font-['Carto']">
+          Paintings
+        </Link>
+      </div>
 
-        {/* Hamburger menu for mobile */}
-        <button className="md:hidden flex items-center" onClick={toggleMenu}>
+      {/* Mobile hamburger */}
+      <div className="md:hidden flex items-center">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
             fill="none"
-            viewBox="0 0 24 24"
             stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
+
+      {/* Mobile dropdown */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 bg-base-100 shadow-md md:hidden z-50 py-4 px-6 space-y-3">
+          {navItems.map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="block w-full text-left hover:text-primary transition-colors"
+            >
+              {label}
+            </button>
+          ))}
+          <Link href="/originals" className="block hover:text-primary transition-colors ">
+            Paintings
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

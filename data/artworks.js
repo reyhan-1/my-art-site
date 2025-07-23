@@ -1,53 +1,140 @@
 const artworks = [
+    {
+    slug: "alacati",
+    title: "Alacati Streets",
+    images: [
       {
-      slug: "east-coast-garden",
-      title: "East Coast Garden",
-      image: "/6.jpg",
-      price: "$250",
-      sold: false,
-      description: "Original oil painting. 2025",
-    },
+        url: "/alacati.JPG",
+        alt: "Alacati Streets painting",
+      }
+    ],
+    references: [
+      {
+        url: "/alacati-reference.JPG",
+        alt: "Reference photo for Alacati Streets",
+      }
+    ],
+    price: "$250",
+    sold: false,
+    dimension: "50x50 cm",
+    description: "Oil on canvas. 2025",
+  },
+      {
+    slug: "daffodil",
+    title: "Daffodils by the Window",
+    images: [
+      {
+        url: "/daffodil.JPG",
+        alt: "Daffodils by the Window painting",
+      }
+    ],
+    references: [
+      {
+        url: "/daffodil-reference.jpg",
+        alt: "Reference photo for Daffodils by the Window",
+      }
+    ],
+    price: "$250",
+    sold: false,
+    dimension: "25x25 cm",
+    description: "Oil on canvas. 2025",
+  },
+  {
+    slug: "walk",
+    title: "Walking to the Light",
+    images: [
+      {
+        url: "/walk.JPG",
+        alt: "Walking to the light painting",
+      }
+    ],
+    references: [
+      {
+        url: "/walk-reference.PNG",
+        alt: "Reference photo for Walking to the light",
+      }
+    ],
+    price: "$250",
+    sold: false,
+    dimension: "40x50 cm",
+    description: "Oil on canvas. 2025",
+  },
     {
-      slug: "journey",
-      title: "Journey",
-      image: "/5.jpg",
-      price: "",
-      sold: true,
-      description: "Original oil painting. 2025",
-    },
-    {
-      slug: "ocean-heart",
-      title: "Ocean Heart",
-      image: "/4.jpg",
-      price: "$50",
-      sold: false,
-      description: "Original oil painting. 2025.",
-    },
-    {
-      slug: "to-the-city",
-      title: "To The City",
-      image: "/3.jpg",
-      price: "$150",
-      sold: false,
-      description: "Original oil painting. 2025.",
-    },
-    {
-      slug: "wild-flowers",
-      title: "Wildflowers",
-      image: "/2.jpg",
-      price: "$200",
-      sold: false,
-      description: "Original oil painting. 2025",
-    },
-    {
-      slug: "winter-sunset",
-      title: "Winter Sunset",
-      image: "/1.jpg",
-      price: "$150",
-      sold: false,
-      description: "Original oil painting. 2025",
-    },
-  ];
-  
-  export default artworks;
-  
+    slug: "east-coast-garden",
+    title: "East Coast Garden",
+    images: [
+      {
+        url: "/east-coast-garden.jpg",
+        alt: "East Coast Garden painting",
+      }
+    ],
+    references: [
+      {
+        url: "/east-coast-garden-reference.jpg",
+        alt: "Reference photo for East Coast Garden",
+      }
+    ],
+    price: "$250",
+    sold: false,
+    dimension: "40x50 cm",
+    description: "Oil on canvas. 2025",
+  },
+  {
+    slug: "journey",
+    title: "Journey",
+    images: [
+      {
+        url: "/journey.jpg",
+        alt: "Journey painting",
+      }
+    ],
+    price: "",
+    sold: true,
+    dimension: "30x40 cm",
+    description: "Oil on canvas. 2025",
+  },
+  {
+    slug: "to-the-city",
+    title: "To The City",
+    images: [
+      {
+        url: "/to-the-city.jpg",
+        alt: "To The City painting",
+      }
+    ],
+    price: "$150",
+    sold: false,
+    dimension: "30x40 cm",
+    description: "Oil on canvas. 2025.",
+  },
+  {
+    slug: "wild-flowers",
+    title: "Wildflowers",
+    images: [
+      {
+        url: "/wildflowers.jpg",
+        alt: "Wildflowers painting",
+      }
+    ],
+    price: "$200",
+    sold: false,
+    dimension: "30x40 cm",
+    description: "Oil on canvas. 2025",
+  },
+  {
+    slug: "winter-sunset",
+    title: "Winter Sunset",
+    images: [
+      {
+        url: "/winter-sunset.jpg",
+        alt: "Winter Sunset painting",
+      }
+    ],
+    price: "$150",
+    sold: false,
+    dimension: "30x40 cm",
+    description: "Oil on canvas. 2025",
+  },
+];
+
+export default artworks;
