@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image'; // Added import
 import {underline} from "next/dist/lib/picocolors";
 
 export default function About() {
@@ -29,10 +30,10 @@ export default function About() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             >
-            Hi, I'm Reyhan! A software engineer with experience in <strong>full stack engineering</strong> and <strong>automation</strong>.
+            Hi, I&apos;m Reyhan! A software engineer with experience in <strong>full stack engineering</strong> and <strong>automation</strong>.
             </motion.h2>
           <p className="text-l text-base-content mt-2 leading-relaxed">
-              Nice to meet you! Currently I'm a software engineer at{' '}
+              Nice to meet you! Currently I&apos;m a software engineer at{' '}
               <a
                   href="https://celikmot.com.tr/"
                   target="_blank"
@@ -41,10 +42,10 @@ export default function About() {
               >
                 Celik
               </a>
-            .{' '}I’m passionate about building software solutions that are thoughtful and efficient.
+            .{' '}I&apos;m passionate about building software solutions that are thoughtful and efficient.
             My work spans full-stack engineering, automation, and project leadership. I love simplifying systems, mentoring others, and turning ambiguity into elegant code.
           </p>
-          <p className="text-l text-base-content/10 mt-2 leading-relaxed"> I've had the pleasure of working at amazing
+          <p className="text-l text-base-content/10 mt-2 leading-relaxed"> I&apos;ve had the pleasure of working at amazing
 green tech companies in the past, such as {' '}
               <a
                   href="https://axiomcloud.ai/"
@@ -63,7 +64,7 @@ green tech companies in the past, such as {' '}
                 Uplight
               </a>.</p>
           <p className="text-l text-base-content mt-2 leading-relaxed">
-            When I’m not coding, you’ll probably find me painting, or planning my next museum visit.
+            When I&apos;m not coding, you&apos;ll probably find me painting, or planning my next museum visit.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -90,11 +91,13 @@ green tech companies in the past, such as {' '}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <img
-  src="/rey.jpg"
-  alt="Reyhan Uyanik"
-  className=" rounded-2xl shadow-xl scale-75"
-/>
+          <Image
+            src="/rey.jpg"
+            alt="Reyhan Uyanik"
+            width={400}
+            height={400}
+            className="rounded-2xl shadow-xl scale-75"
+          />
         </motion.div>
       </div>
     </motion.section>

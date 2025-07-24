@@ -6,18 +6,20 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useEffect, useState } from "react";
 
+// Move backgrounds outside component to satisfy eslint dependency rule
+const backgrounds = ['/welcome2.JPG', '/welcome5.JPG'];
+
 export default function Originals() {
-  const backgrounds = ['/welcome2.JPG', '/welcome5.JPG'];
   const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * backgrounds.length);
       setCurrentBackground(backgrounds[randomIndex]);
-    }, 10000);
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, []); // now empty deps is OK
 
   return (
     <div className="p-10">
