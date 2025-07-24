@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import About from '@/components/about';
 import Experience from '@/components/experience';
 import Education from '@/components/education';
-import Extras from '@/components/Extras';
 
 export default function Home() {
   const router = useRouter();
