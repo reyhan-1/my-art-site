@@ -32,16 +32,6 @@ export default function Education() {
         >
           <h3 className="text-xl text-base-content font-bold mb-2">Bilkent University</h3>
           <h4 className="text-lg text-primary">B.S. Computer Engineering (2021)</h4>
-        </motion.div>
-
-        {/* Right Column: Coursework */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-xl"
-        >
           <h4 className="text-xl text-base-content font-semibold mb-4">Coursework</h4>
           <ul className="list-disc list-inside text-base-content space-y-1 text-base">
             <li>Algorithms & Complexity</li>
@@ -53,6 +43,24 @@ export default function Education() {
             <li>Application Lifecycle Management</li>
             <li>Software Verification and Validation</li>
             <li>Software Engineering Project Management</li>
+          </ul>
+        </motion.div>
+
+        {/* Right Column: Coursework */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-xl"
+        >
+          <h4 className="text-xl text-base-content font-semibold mb-4">Skills</h4>
+          <ul className="list-disc list-inside text-base-content space-y-1 text-base">
+            <li><strong> Languages:</strong> Python, Java, SQL, JavaScript</li>
+            <li><strong> Backend:</strong> Django, Flask, FastAPI</li>
+            <li><strong> Frontend:</strong>  React, TypeScript, Tailwind CSS, daisyUI</li>
+            <li><strong> Data Frameworks:</strong> Apache Airflow</li>
+            <li><strong> Cloud & DevOps::</strong> AWS, GCP, Kubernetes</li>
           </ul>
         </motion.div>
       </div>

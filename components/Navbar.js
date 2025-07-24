@@ -43,7 +43,7 @@ export default function Navbar() {
             {label}
           </button>
         ))}
-        <Link href="/originals" className="hover:text-primary transition-colors font-['Carto']">
+        <Link href="/originals" className="hover:text-primary transition-colors">
           Paintings
         </Link>
       </div>

@@ -6,9 +6,7 @@ const artworks = [
       {
         url: "/alacati.JPG",
         alt: "Alacati Streets painting",
-      }
-    ],
-    references: [
+      },
       {
         url: "/alacati-reference.JPG",
         alt: "Reference photo for Alacati Streets",
@@ -26,9 +24,7 @@ const artworks = [
       {
         url: "/daffodil.JPG",
         alt: "Daffodils by the Window painting",
-      }
-    ],
-    references: [
+      },
       {
         url: "/daffodil-reference.jpg",
         alt: "Reference photo for Daffodils by the Window",
@@ -46,9 +42,7 @@ const artworks = [
       {
         url: "/walk.JPG",
         alt: "Walking to the light painting",
-      }
-    ],
-    references: [
+      },
       {
         url: "/walk-reference.PNG",
         alt: "Reference photo for Walking to the light",
@@ -66,9 +60,7 @@ const artworks = [
       {
         url: "/east-coast-garden.jpg",
         alt: "East Coast Garden painting",
-      }
-    ],
-    references: [
+      },
       {
         url: "/east-coast-garden-reference.jpg",
         alt: "Reference photo for East Coast Garden",
@@ -100,6 +92,10 @@ const artworks = [
       {
         url: "/to-the-city.jpg",
         alt: "To The City painting",
+      },
+      {
+        url: "/to-the-city-reference.jpg",
+        alt: "To The City reference picture",
       }
     ],
     price: "$150",

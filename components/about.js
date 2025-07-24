@@ -45,7 +45,23 @@ export default function About() {
             My work spans full-stack engineering, automation, and project leadership. I love simplifying systems, mentoring others, and turning ambiguity into elegant code.
           </p>
           <p className="text-l text-base-content/10 mt-2 leading-relaxed"> I've had the pleasure of working at amazing
-green tech companies in the past, such as Axiom Cloud AI and Uplight.</p>
+green tech companies in the past, such as {' '}
+              <a
+                  href="https://axiomcloud.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold hover:text-primary"
+              >
+                Axiom Cloud AI
+              </a> and {' '}
+              <a
+                  href="https://uplight.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold hover:text-primary"
+              >
+                Uplight
+              </a>.</p>
           <p className="text-l text-base-content mt-2 leading-relaxed">
             When I’m not coding, you’ll probably find me painting, or planning my next museum visit.
           </p>

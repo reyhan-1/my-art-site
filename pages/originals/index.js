@@ -35,7 +35,7 @@ export default function Originals() {
         <div className="absolute inset-0 bg-black bg-opacity-50 z-0" />
 
         <div className="relative z-10 text-center text-white">
-          <h1 className="md:text-4xl font-bold mb-10">
+          <h1 className="md:text-4xl font-bold mb-10 font-['Carto']">
               Welcome to My Painting Collection
           </h1>
         </div>

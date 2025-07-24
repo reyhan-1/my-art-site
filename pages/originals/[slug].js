@@ -1,5 +1,4 @@
 'use client';
-
 import { useRouter } from "next/router";
 import artworks from "@/data/artworks";
 import { useCart } from "@/context/CartContext";
@@ -22,7 +21,7 @@ export default function PaintingDetail() {
   };
 
   const handleGoBack = () => {
-    router.back();
+    router.push('/originals');
   };
 
   return (
@@ -45,7 +44,7 @@ export default function PaintingDetail() {
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Left side - Image */}
+        {/* Left side - DaisyUI Carousel */}
         <motion.div
           className="flex-1"
           initial={{ opacity: 0, x: -50 }}
@@ -53,14 +52,41 @@ export default function PaintingDetail() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Image
-            src={painting.images[0]?.url || "/welcome.jpg"}
-            alt={painting.images[0]?.alt || painting.title}
-            layout="responsive"
-            width={500}
-            height={300}
-            className="w-full rounded-xl shadow-lg"
-          />
+          <div className="carousel rounded-xl shadow-lg">
+            {painting.images.map((image, index) => (
+              <div
+                id={`slide${index}`}
+                key={index}
+                className="carousel-item relative w-full"
+              >
+                <Image
+                  src={image.url || "/welcome.jpg"}
+                  alt={image.alt || painting.title}
+                  layout="responsive"
+                  width={500}
+                  height={300}
+                  className="w-full"
+                />
+
+                {painting.images.length > 1 && (
+                  <>
+                    <a
+                      href={`#slide${index === 0 ? painting.images.length - 1 : index - 1}`}
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2 btn btn-circle bg-white/80 text-black hover:bg-white"
+                    >
+                      ❮
+                    </a>
+                    <a
+                      href={`#slide${index === painting.images.length - 1 ? 0 : index + 1}`}
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 btn btn-circle bg-white/80 text-black hover:bg-white"
+                    >
+                      ❯
+                    </a>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Right side - Info */}
