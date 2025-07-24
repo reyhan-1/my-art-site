@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import Education from '@/components/Education';
+import About from '@/components/about';
+import Experience from '@/components/experience';
+import Education from '@/components/education';
 import Extras from '@/components/Extras';
 
 export default function Home() {
