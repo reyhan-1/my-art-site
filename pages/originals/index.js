@@ -6,40 +6,20 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useEffect, useState } from "react";
 
-const backgrounds = ['/welcome8.jpg','/welcome9.JPG', '/welcome10.JPG', '/welcome2.JPG', '/welcome5.JPG'];
+const backgrounds = ['/welcome8.jpg','/welcome2.JPG', '/welcome5.JPG', '/welcome9.JPG', '/welcome10.JPG'];
 
 export default function Originals() {
-  const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    let shuffled = shuffle(backgrounds);
-    let index = 0;
-
-    function shuffle(array) {
-      const result = [...array];
-      for (let i = result.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [result[i], result[j]] = [result[j], result[i]];
-      }
-      return result;
-    }
-
     const interval = setInterval(() => {
-      index++;
-      if (index >= shuffled.length) {
-        let newShuffle = shuffle(backgrounds);
-        // prevent same image twice in a row
-        while (newShuffle[0] === shuffled[shuffled.length - 1]) {
-          newShuffle = shuffle(backgrounds);
-        }
-        shuffled = newShuffle;
-        index = 0;
-      }
-      setCurrentBackground(shuffled[index]);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
     }, 4000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const currentBackground = backgrounds[currentIndex];
 
   return (
     <>
