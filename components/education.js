@@ -21,7 +21,7 @@ export default function Education() {
         Education
       </motion.h2>
 
-      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-y-12 gap-x-6 xl:gap-x-4 items-start text-white font-c">
+      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-y-12 gap-x-6 xl:gap-x-4 pb-8 items-start text-white font-c">
         {/* Left Column: Education */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -44,6 +44,7 @@ export default function Education() {
             <li>Software Verification and Validation</li>
             <li>Software Engineering Project Management</li>
           </ul>
+          <p className="font-mont pt-4 pb-4 ">You can find my college projects on my github page.</p>
         </motion.div>
 
         {/* Right Column: Coursework */}

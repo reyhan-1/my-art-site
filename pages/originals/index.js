@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useEffect, useState } from "react";
 
-const backgrounds = ['/welcome8.jpg','/welcome9.jpg', '/welcome10.jpg', '/welcome2.jpg', '/welcome5.jpg'];
+const backgrounds = ['/welcome8.jpg','/welcome9.JPG', '/welcome10.JPG', '/welcome2.JPG', '/welcome5.JPG'];
 
 export default function Originals() {
   const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
