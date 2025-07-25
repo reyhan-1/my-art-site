@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <div className="navbar fixed top-0 left-0 right-0 z-50 bg-base-100 shadow px-4">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost text-2xl font-['Carto']">
+        <Link href="/" className="btn btn-ghost text-2xl font-italiana">
           Reyhan Uyanik
         </Link>
       </div>
@@ -38,12 +38,12 @@ export default function Navbar() {
           <button
             key={id}
             onClick={() => scrollToSection(id)}
-            className="hover:text-primary transition-colors"
+            className="hover:text-primary transition-colors font-mont"
           >
             {label}
           </button>
         ))}
-        <Link href="/originals" className="hover:text-primary transition-colors">
+        <Link href="/originals" className="hover:text-primary transition-colors font-mont">
           Paintings
         </Link>
       </div>
@@ -70,12 +70,12 @@ export default function Navbar() {
             <button
               key={id}
               onClick={() => scrollToSection(id)}
-              className="block w-full text-left hover:text-primary transition-colors"
+              className="block w-full text-left hover:text-primary transition-colors font-mont"
             >
               {label}
             </button>
           ))}
-          <Link href="/originals" className="block hover:text-primary transition-colors ">
+          <Link href="/originals" className="block hover:text-primary transition-colors font-mont">
             Paintings
           </Link>
         </div>

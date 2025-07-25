@@ -15,7 +15,7 @@ const artworks = [
     price: "$250",
     sold: false,
     dimension: "50x50 cm",
-    description: "Oil on canvas. 2025",
+    description: "Oil on canvas, 2025",
   },
       {
     slug: "daffodil",
@@ -33,7 +33,7 @@ const artworks = [
     price: "$250",
     sold: false,
     dimension: "25x25 cm",
-    description: "Oil on canvas. 2025",
+    description: "Oil on canvas, 2025",
   },
   {
     slug: "walk",
@@ -51,7 +51,7 @@ const artworks = [
     price: "$250",
     sold: false,
     dimension: "40x50 cm",
-    description: "Oil on canvas. 2025",
+    description: "Oil on canvas, 2025",
   },
     {
     slug: "east-coast-garden",
@@ -69,7 +69,7 @@ const artworks = [
     price: "$250",
     sold: false,
     dimension: "40x50 cm",
-    description: "Oil on canvas. 2025",
+    description: "Oil on canvas, 2025",
   },
   {
     slug: "journey",
@@ -83,7 +83,7 @@ const artworks = [
     price: "",
     sold: true,
     dimension: "30x40 cm",
-    description: "Oil on canvas. 2025",
+    description: "Oil on canvas, 2025",
   },
   {
     slug: "to-the-city",
@@ -101,7 +101,7 @@ const artworks = [
     price: "$150",
     sold: false,
     dimension: "30x40 cm",
-    description: "Oil on canvas. 2025.",
+    description: "Oil on canvas, 2025.",
   },
   {
     slug: "wild-flowers",
@@ -115,7 +115,7 @@ const artworks = [
     price: "$200",
     sold: false,
     dimension: "30x40 cm",
-    description: "Oil on canvas. 2025",
+    description: "Oil on canvas, 2025",
   },
   {
     slug: "winter-sunset",
@@ -129,7 +129,7 @@ const artworks = [
     price: "$150",
     sold: false,
     dimension: "30x40 cm",
-    description: "Oil on canvas. 2025",
+    description: "Oil on canvas, 2025",
   },
 ];
 

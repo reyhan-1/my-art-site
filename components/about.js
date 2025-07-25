@@ -24,7 +24,7 @@ export default function About() {
           viewport={{ once: true }}
         >
             <motion.h2
-            className="text-xl font-semibold justify-center font-['Italiana']"
+            className="text-xl font-semibold justify-center font-italiana"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -32,7 +32,7 @@ export default function About() {
             >
             Hi, I&apos;m Reyhan! A software engineer with experience in <strong>full stack engineering</strong> and <strong>automation</strong>.
             </motion.h2>
-          <p className="text-l text-base-content mt-2 leading-relaxed">
+          <p className="text-l text-base-content mt-2 leading-relaxed font-mont">
               Nice to meet you! Currently I&apos;m a software engineer at{' '}
               <a
                   href="https://celikmot.com.tr/"
@@ -45,7 +45,7 @@ export default function About() {
             .{' '}I&apos;m passionate about building software solutions that are thoughtful and efficient.
             My work spans full-stack engineering, automation, and project leadership. I love simplifying systems, mentoring others, and turning ambiguity into elegant code.
           </p>
-          <p className="text-l text-base-content/10 mt-2 leading-relaxed"> I&apos;ve had the pleasure of working at amazing
+          <p className="text-l text-base-content/10 mt-2 leading-relaxed font-mont"> I&apos;ve had the pleasure of working at amazing
 green tech companies in the past, such as {' '}
               <a
                   href="https://axiomcloud.ai/"
@@ -63,11 +63,11 @@ green tech companies in the past, such as {' '}
               >
                 Uplight
               </a>.</p>
-          <p className="text-l text-base-content mt-2 leading-relaxed">
+          <p className="text-l text-base-content mt-2 leading-relaxed font-mont">
             When I&apos;m not coding, you&apos;ll probably find me painting, or planning my next museum visit.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 font-italiana">
             <a href="https://www.linkedin.com/in/reyhan-uyanik/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-primary">
               LinkedIn
             </a>

@@ -8,6 +8,12 @@ module.exports = {
     extend: {
       fontFamily: {
         'shadows-into-light': ['"Shadows Into Light"', 'cursive'],
+        'playfair': ['"Playfair Display"', 'serif'],
+        'lora': ['Lora', 'serif'],
+        'mont': ['Montserrat', 'cursive'],
+        'italiana': ['Italiana', 'serif'],
+        'mynerve': ['Mynerve', 'serif'],
+        'fuzzy': ['Fuzzy Bubbles','cursive']
       },
       colors: {
         base100: 'oklch(22% 0.019 237.69)',

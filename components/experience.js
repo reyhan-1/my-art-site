@@ -92,12 +92,12 @@ function parseBoldMarkdown(text) {
 function renderDatesWithLocation(dates) {
   const [datePart, locationPart] = dates.split('|').map((s) => s.trim());
   return (
-    <div className="text-sm text-base-content mb-1">
+    <div className="text-sm text-base-content mb-1 font-mont">
       {datePart}
       {locationPart && (
         <>
           {' | '}
-          <span className="text-secondary font-semibold">{locationPart}</span>
+          <span className="text-secondary font-mont">{locationPart}</span>
         </>
       )}
     </div>
@@ -111,7 +111,7 @@ export default function Experience() {
       id="experience"
     >
       <motion.h2
-        className="text-3xl font-semibold mb-12 font-['Carto'] text-base-content"
+        className="text-3xl font-semibold mb-12 font-italiana text-base-content"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -120,12 +120,12 @@ export default function Experience() {
         Experience
       </motion.h2>
 
-      <div className="relative border-l-2 border-primary ml-4 space-y-16">
+      <div className="relative border-l-2 border-primary ml-4 space-y-16 font-mont">
         {jobs.map(({ id, company, link, dates, description, bullets, skills }) => (
           <div key={id} className="relative pl-8">
             <div className="absolute -left-[11px] top-2 w-6 h-6 bg-primary rounded-full border-2 border-base-100" />
             {renderDatesWithLocation(dates)}
-            <h3 className="text-xl font-semibold text-primary hover:underline">
+            <h3 className="text-xl font-semibold text-primary hover:underline font-mont">
               <a href={link} target="_blank" rel="noreferrer">
                 {company}
               </a>
