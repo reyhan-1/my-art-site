@@ -6,20 +6,23 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useEffect, useState } from "react";
 
-const backgrounds = ['/welcome8.jpg','/welcome2.JPG', '/welcome5.JPG', '/welcome9.JPG', '/welcome10.JPG'];
-
 export default function Originals() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const backgrounds = ['/welcome8.jpg','/welcome2.JPG', '/welcome5.JPG', '/welcome9.JPG', '/welcome10.JPG'];
 
+
+ // State to track the current background
+  const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
+
+  // Set up effect to change background every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
-    }, 4000);
+      const randomIndex = Math.floor(Math.random() * backgrounds.length);
+      setCurrentBackground(backgrounds[randomIndex]); // Change background image
+    }, 4000); // Change every 10 seconds
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Clean up interval on component unmount
   }, []);
-
-  const currentBackground = backgrounds[currentIndex];
 
   return (
     <>
