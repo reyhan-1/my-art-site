@@ -1,75 +1,85 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
-const backgrounds = [
-  '/welcome8.jpg',
-  '/welcome2.JPG',
-  '/welcome5.JPG',
-  '/welcome9.JPG',
-  '/welcome10.JPG',
-];
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
-export default function Originals() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [loaded, setLoaded] = useState({}); // Track loaded images to avoid flicker
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % backgrounds.length);
-    }, 5000); // slower transition for better viewing
-    return () => clearInterval(interval);
-  }, []);
-
-  // Mark images loaded on load
-  const handleLoad = (src) => {
-    setLoaded(prev => ({ ...prev, [src]: true }));
+  const scrollToSection = (id) => {
+    if (router.pathname === '/') {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push(`/#${id}`);
+    }
+    setIsMenuOpen(false); // Close menu after click
   };
 
+  const navItems = [
+    { label: 'About', id: 'about' },
+    { label: 'Experience', id: 'experience' },
+    { label: 'Education', id: 'education' },
+  ];
+
   return (
-    <div className="relative min-h-screen overflow-hidden scroll-mt-24">
-      {backgrounds.map((src, i) => (
-        <motion.div
-          key={src}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: i === currentIndex ? 1 : 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute inset-0"
-          style={{ willChange: 'opacity' }}
-        >
-          <Image
-            src={src}
-            alt=""
-            fill
-            style={{ objectFit: 'cover' }}
-            priority={i === currentIndex || loaded[src] ? true : false}
-            onLoadingComplete={() => handleLoad(src)}
-            quality={90}
-          />
-          {/* Optional overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-30 pointer-events-none" />
-        </motion.div>
-      ))}
-
-      {/* Your hero content here */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-screen max-w-3xl mx-auto p-8 text-center text-primary-content">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 font-italiana">
-          Welcome to My Painting Collection
-        </h1>
-
-        <p className="text-lg md:text-xl italic font-bold mb-4 font-fuzzy">
-          “Medicine, law, business, engineering, these are all noble pursuits, and
-          necessary to sustain life. But poetry, beauty, romance, love, these are what we stay alive for.”
-        </p>
-
-        <p className="text-md md:text-lg font-semibold font-mont text-secondary italic text-right w-full">
-          — Dead Poet’s Society
-        </p>
+    <div className="navbar fixed top-0 left-0 right-0 z-50 bg-base-100 shadow px-4">
+      <div className="flex-1">
+        <Link href="/" className="btn btn-ghost text-2xl font-italiana">
+          Reyhan Uyanik
+        </Link>
       </div>
 
-      {/* Rest of your page content */}
+      {/* Desktop Nav */}
+      <div className="hidden md:flex space-x-4">
+        {navItems.map(({ label, id }) => (
+          <button
+            key={id}
+            onClick={() => scrollToSection(id)}
+            className="hover:text-primary transition-colors font-mont"
+          >
+            {label}
+          </button>
+        ))}
+        <Link href="/originals" className="hover:text-primary transition-colors font-mont">
+          Paintings
+        </Link>
+      </div>
+
+      {/* Mobile hamburger */}
+      <div className="md:hidden flex items-center">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile dropdown */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 bg-base-100 shadow-md md:hidden z-50 py-4 px-6 space-y-3">
+          {navItems.map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="block w-full text-left hover:text-primary transition-colors font-mont"
+            >
+              {label}
+            </button>
+          ))}
+          <Link href="/originals" className="block hover:text-primary transition-colors font-mont">
+            Paintings
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
