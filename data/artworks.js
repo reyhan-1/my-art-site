@@ -4,11 +4,11 @@ const artworks = [
     title: "Alacati Streets",
     images: [
       {
-        url: "/alacati.JPG",
+        url: "/alacati.avif",
         alt: "Alacati Streets painting",
       },
       {
-        url: "/alacati-reference.JPG",
+        url: "/alacati-reference.avif",
         alt: "Reference photo for Alacati Streets",
       }
     ],
@@ -22,11 +22,11 @@ const artworks = [
     title: "Daffodils by the Window",
     images: [
       {
-        url: "/daffodil.JPG",
+        url: "/daffodil.avif",
         alt: "Daffodils by the Window painting",
       },
       {
-        url: "/daffodil-reference.jpg",
+        url: "/daffodil-reference.avif",
         alt: "Reference photo for Daffodils by the Window",
       }
     ],
@@ -40,11 +40,11 @@ const artworks = [
     title: "Walking to the Light",
     images: [
       {
-        url: "/walk.JPG",
+        url: "/walk.avif",
         alt: "Walking to the light painting",
       },
       {
-        url: "/walk-reference.PNG",
+        url: "/walk-reference.avif",
         alt: "Reference photo for Walking to the light",
       }
     ],
@@ -58,11 +58,11 @@ const artworks = [
     title: "East Coast Garden",
     images: [
       {
-        url: "/east-coast-garden.jpg",
+        url: "/east-coast-garden.avif",
         alt: "East Coast Garden painting",
       },
       {
-        url: "/east-coast-garden-reference.jpg",
+        url: "/east-coast-garden-reference.avif",
         alt: "Reference photo for East Coast Garden",
       }
     ],
@@ -76,7 +76,7 @@ const artworks = [
     title: "Journey",
     images: [
       {
-        url: "/journey.jpg",
+        url: "/journey.avif",
         alt: "Journey painting",
       }
     ],
@@ -90,11 +90,11 @@ const artworks = [
     title: "To The City",
     images: [
       {
-        url: "/to-the-city.jpg",
+        url: "/to-the-city.avif",
         alt: "To The City painting",
       },
       {
-        url: "/to-the-city-reference.jpg",
+        url: "/to-the-city-reference.avif",
         alt: "To The City reference picture",
       }
     ],
@@ -108,7 +108,7 @@ const artworks = [
     title: "Wildflowers",
     images: [
       {
-        url: "/wildflowers.jpg",
+        url: "/wildflowers.avif",
         alt: "Wildflowers painting",
       }
     ],
@@ -122,7 +122,7 @@ const artworks = [
     title: "Winter Sunset",
     images: [
       {
-        url: "/winter-sunset.jpg",
+        url: "/winter-sunset.avif",
         alt: "Winter Sunset painting",
       }
     ],

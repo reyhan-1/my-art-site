@@ -80,7 +80,7 @@ export default function PaintingDetail() {
                 className="absolute inset-0"
               >
                 <Image
-                  src={painting.images[currentSlide].url || "/welcome2.jpg"}
+                  src={painting.images[currentSlide].url || "/welcome2.avif"}
                   alt={painting.images[currentSlide].alt || painting.title}
                   fill
                   style={{ objectFit: "contain" }}

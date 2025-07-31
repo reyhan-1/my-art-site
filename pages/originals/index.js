@@ -8,11 +8,11 @@ import artworks from "@/data/artworks";
 
 export default function Originals() {
   const backgrounds = [
-    '/welcome8.jpg',
-    '/welcome2.JPG',
-    '/welcome5.JPG',
-    '/welcome9.JPG',
-    '/welcome10.JPG',
+    '/welcome8.avif',
+    '/welcome2.avif',
+    '/welcome5.avif',
+    '/welcome9.avif',
+    '/welcome10.avif',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -105,7 +105,7 @@ export default function Originals() {
                  font-italiana font-bold overflow-hidden">
                   <figure className="relative w-full h-64">
                     <Image
-                      src={artwork.images?.[0]?.url || "/placeholder.jpg"}
+                      src={artwork.images?.[0]?.url || "/welcome2.avif"}
                       alt={artwork.images?.[0]?.alt || artwork.title}
                       fill
                       priority
