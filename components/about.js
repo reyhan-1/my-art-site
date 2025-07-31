@@ -110,7 +110,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <Image
-            src="/rey.jpg"
+            src="/rey.avif"
             alt="Reyhan Uyanik"
             width={400}
             height={400}
