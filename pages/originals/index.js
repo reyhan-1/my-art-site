@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from 'next/image';
+import { useEffect, useState } from "react";
+import NextImage from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
 import artworks from "@/data/artworks";
 
@@ -18,6 +18,13 @@ export default function Originals() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    backgrounds.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % backgrounds.length);
     }, 4000);
@@ -25,6 +32,13 @@ export default function Originals() {
   }, []);
 
   const currentBackground = backgrounds[currentIndex];
+
+  // Motion variants for cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hover: { scale: 1.03, transition: { duration: 0.3 } }
+  };
 
   return (
     <>
@@ -37,16 +51,20 @@ export default function Originals() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
             className="absolute inset-0"
-            style={{
-              backgroundImage: `url(${currentBackground})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              zIndex: 0,
-            }}
-          />
+            style={{ zIndex: 0 }}
+          >
+            <NextImage
+              src={currentBackground}
+              alt="Background"
+              fill
+              style={{ objectFit: 'cover' }}
+              priority={currentIndex === 0}
+              quality={75}
+              placeholder="empty"
+            />
+          </motion.div>
         </AnimatePresence>
 
-        {/* Dark overlay to improve text readability */}
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-black bg-opacity-50"
@@ -85,26 +103,22 @@ export default function Originals() {
 
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
         >
           {artworks.map((artwork) => (
             <motion.div
               key={artwork.slug}
-              whileHover={{ scale: 1.02 }}
-              className="transition-transform duration-300 ease-in-out"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+              variants={cardVariants}
+              whileHover="hover"
+              style={{ willChange: "transform" }}
             >
               <Link href={`/originals/${artwork.slug}`}>
                 <div className="card card-compact card-border bg-base-100 shadow-lg hover:shadow-2xl
                  font-italiana font-bold overflow-hidden">
                   <figure className="relative w-full h-64">
-                    <Image
+                    <NextImage
                       src={artwork.images?.[0]?.url || "/welcome2.avif"}
                       alt={artwork.images?.[0]?.alt || artwork.title}
                       fill
