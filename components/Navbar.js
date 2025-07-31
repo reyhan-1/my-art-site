@@ -43,7 +43,7 @@ export default function Navbar() {
             {label}
           </button>
         ))}
-        <Link href="/originals" className="hover:text-primary transition-colors font-mont">
+        <Link href="/originals" className="hover:text-secondary transition-colors font-mont" onClick={() => setIsMenuOpen(false)}>
           Paintings
         </Link>
       </div>
