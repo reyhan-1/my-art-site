@@ -5,13 +5,13 @@ import Image from 'next/image';
 export default function About() {
   return (
     <motion.section
-      className="min-h-[70vh] pt-32 px-6 md:px-12 lg:px-16 bg-base-100"
+      className="min-h-[70vh] pt-32 bg-base-100" // no horizontal padding here
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       id="about"
     >
-      <div className="max-w-screen-xl mb-8 mx-auto grid lg:grid-cols-2 gap-y-12 gap-x-6 xl:gap-x-4 items-center">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-16 grid lg:grid-cols-2 gap-y-12 gap-x-6 xl:gap-x-4 items-center">
         {/* Text Column */}
         <div className="space-y-6 text-base-content font-c max-w-2xl">
           <motion.h2
