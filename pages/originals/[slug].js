@@ -90,6 +90,7 @@ export default function PaintingDetail() {
            <h1 className="text-3xl font-bold font-italiana">{painting.title}</h1>
             <p className="text-lg font-mont">
               {painting.dimension}{" | "}{painting.description}
+                <div className="badge badge-primary text-lg p-3">Available for Purchase</div>
             </p>
           {painting.sold ? (
             <div className="badge badge-error text-lg p-3">Sold</div>

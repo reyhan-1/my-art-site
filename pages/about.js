@@ -36,13 +36,12 @@ export default function About() {
               I’ve been doodling and painting since forever, but it wasn’t until January 2025 that I finally started taking painting lessons.
               And I’m loving every minute of it. It’s reminded me how much I’ve missed being a student — learning new perspectives that change the way I think and see the world.
             </p>
-
-            <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 mt-6">
-              Ethan Hawke expresses why art is vital so much more eloquently than I can here(especially around the 7th minute):
-            </blockquote>
           </div>
         </div>
 
+                    <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 mt-6">
+              Ethan Hawke expresses why art is vital so much more eloquently than I can here(especially around the 7th minute):
+            </blockquote>
         {/* YouTube Embed with consistent horizontal padding */}
         <div className="mt-12 px-6 relative" style={{ paddingTop: '56.25%' }}>
           <iframe
@@ -54,15 +53,15 @@ export default function About() {
           ></iframe>
         </div>
 
-        <p className="mt-10 text-gray-700">
+        <p className="mt-10 text-base-content">
           Thank you for being here. Feel free to explore my{' '}
-          <Link href="/paintings" className="text-secondary underline hover:no-underline transition">
+          <Link href="/paintings" className="text-secondary hover:text-warning transition">
             paintings
           </Link>, read my{' '}
-          <Link href="/art-talks" className="text-secondary underline hover:no-underline transition">
+          <Link href="/art-talks" className="text-secondary hover:text-accent transition">
             Art Talks
           </Link>, or{' '}
-          <Link href="/contact" className="text-secondary underline hover:no-underline transition">
+          <Link href="/contact" className="text-secondary hover:text-info transition">
             get in touch
           </Link>.
         </p>
