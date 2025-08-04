@@ -37,7 +37,7 @@ export default function ArtTalks({ posts }) {
 
   return (
     <div className="max-w-7xl mx-auto p-8">
-      <h6 className="text-primary-content text-4xl font-bold text-center text-gray-900 mb-12">Art Talks</h6>
+      <h6 className="text-primary-content text-4xl font-italiana text-center text-baseline-content mb-6">Art Talks</h6>
       {/* Category Filter Buttons */}
       <div className="flex flex-wrap gap-3 justify-center mb-10 ">
         {allCategories.map((cat) => (
@@ -54,7 +54,7 @@ export default function ArtTalks({ posts }) {
       </div>
 
       {/* Display Filtered Posts */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 align-center">
         {filteredPosts.map(({ slug, title, date, excerpt, image, categories }) => (
           <Link href={`/art-talks/${slug}`} key={slug}>
             <div className="group block transform transition-transform hover:scale-105">
@@ -63,6 +63,8 @@ export default function ArtTalks({ posts }) {
                   <Image
                     src={image || '/default-image.jpg'}
                     alt={title}
+                  width={150}
+                  height={150}
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>

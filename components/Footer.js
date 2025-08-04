@@ -7,22 +7,20 @@ export default function Navbar() {
         <a className="link link-hover">About</a>
         <a className="link link-hover">Contact</a>
       </nav>
-      <form>
-        <h6 className="font-shadows-into-light footer-title">Join my mailing list</h6>
-        <fieldset className="w-80">
-          <label>Be the first to know about new paintings and occasional art talks</label>
-          <div className="join">
-            <input
-              type="text"
-              placeholder="enter your email"
-              className="input input-bordered join-item"
-            />
-            <button className="btn btn-primary join-item">Subscribe</button>
-          </div>
-        </fieldset>
-      </form>
 
-      <nav>
+      <div className="w-80">
+        <h6 className="font-shadows-into-light footer-title">Join my mailing list</h6>
+        <p className="mb-4 text-sm">
+          Be the first to know about new paintings and occasional art talks
+        </p>
+        <Link href="/subscribe" passHref>
+          <button type="button" className="btn btn-primary w-full">
+            Join Mailing List
+          </button>
+        </Link>
+      </div>
+
+ <nav>
         <h6 className="footer-title">Social</h6>
         <div className="grid grid-flow-col gap-4">
           {/* Instagram Link */}
@@ -44,7 +42,7 @@ export default function Navbar() {
               ></path>
             </svg>
           </a>
-          
+
           {/* Email Link */}
           <a
             href="mailto:reyhanuyanik@icloud.com"

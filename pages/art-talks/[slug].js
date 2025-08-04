@@ -53,7 +53,7 @@ export default function Post({ post }) {
 
   return (
     <article className="max-w-3xl mx-auto p-6">
-    <h6 className="text-primary-content text-4xl font-bold text-center text-gray-900 mb-12">Art Talks</h6>
+    <h6 className="text-primary-content text-4xl font-italiana text-center text-baseline-content mb-6">Art Talks</h6>
 
       {/* Post Title and Excerpt */}
       <h1 className="text-2xl font-bold text-gray-200 mb-6">{frontmatter.title}</h1>
@@ -93,7 +93,7 @@ export default function Post({ post }) {
 
 
       {/* Post Content (Markdown) */}
-      <div className="prose prose-lg text-gray-400">
+      <div className="prose prose-lg text-base-content">
         <Markdown>{content}</Markdown>
       </div>
     </article>

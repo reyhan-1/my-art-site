@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+                'cookie': ['Cookie', 'cursive'],
+        'italiana': ['Italiana', 'serif'],
         'shadows-into-light': ['"Shadows Into Light"', 'cursive'],
       },
       colors: {

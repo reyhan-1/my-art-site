@@ -2,22 +2,26 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Navbar() {
-  // State to toggle the mobile menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the menu on mobile
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
     <div className="navbar bg-base-100 shadow">
       <div className="flex-1">
-      <Link href="/" className="btn btn-ghost">
-        <h1 className="text-primary-content font-shadows-into-light text-4xl text-gray-900">Reyhan Uyanik Art</h1>
-          {/* <img src="/R.png" alt="Reyhan Uyanik Art" className="h-12" /> */}
+        <Link href="/" className="btn btn-ghost" onClick={closeMenu}>
+          <h1 className="text-primary-content font-italiana text-4xl text-gray-900">
+            Reyhan Uyanik Art
+          </h1>
         </Link>
       </div>
+
       <div className="flex-none">
         <ul
           className={`menu menu-horizontal px-1 space-x-4 md:flex ${
@@ -25,31 +29,33 @@ export default function Navbar() {
           }`}
         >
           <li>
-            <Link href="/originals" className="text-lg hover:scale-105">
+            <Link href="/originals" className="text-lg hover:scale-105" onClick={closeMenu}>
               Originals
             </Link>
           </li>
           <li>
-            <Link href="/commissions" className="text-lg hover:scale-105">
-              Commissions
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className="text-lg hover:scale-105">
+            <Link href="/contact" className="text-lg hover:scale-105" onClick={closeMenu}>
               Contact
             </Link>
           </li>
           <li>
-            <Link href="/about" className="text-lg hover:scale-105">
+            <Link href="/subscribe" className="text-lg hover:scale-105" onClick={closeMenu}>
+            Subscribe
+        </Link>
+
+          </li>
+          <li>
+            <Link href="/about" className="text-lg hover:scale-105" onClick={closeMenu}>
               About
             </Link>
           </li>
           <li>
-            <Link href="/art-talks" className="text-lg hover:scale-105">
+            <Link href="/art-talks" className="text-lg hover:scale-105" onClick={closeMenu}>
               Art Talks
             </Link>
           </li>
         </ul>
+
         {/* Hamburger menu for mobile view */}
         <button
           className="md:hidden flex items-center"

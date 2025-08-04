@@ -1,44 +1,47 @@
-// /pages/api/sendMessage.js
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { firstName, lastName, email, subject, message } = req.body;
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
 
-    // Configure Nodemailer transport
-    const transporter = nodemailer.createTransport({
-      service: 'gmail', // You can use a different service if you want
-      auth: {
-        user: 'your-email@gmail.com', // Replace with your email (Gmail for example)
-        pass: 'your-email-password', // Replace with your email password or an app password
-      },
-    });
+  const { firstName, lastName, email, subject, message } = req.body;
 
-    // Email message setup
-    const mailOptions = {
-      from: 'your-email@gmail.com', // Replace with your email
-      to: 'reyhanuyanik@icloud.com', // Your email address
-      subject: `New Message from ${firstName} ${lastName}`,
-      text: `
-        You have received a new message from ${firstName} ${lastName}:
+  if (!firstName || !lastName || !email || !subject || !message) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
 
-        Email: ${email}
-        Subject: ${subject}
-        
-        Message:
-        ${message}
-      `,
-    };
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.mail.me.com',
+    port: 587,
+    secure: false, // STARTTLS will upgrade this
+    auth: {
+      user: process.env.ICLOUD_EMAIL,
+      pass: process.env.ICLOUD_PASSWORD,
+    },
+  });
 
-    // Send email
-    try {
-      await transporter.sendMail(mailOptions);
-      return res.status(200).json({ message: 'Message sent successfully!' });
-    } catch (error) {
-      return res.status(500).json({ error: 'Failed to send message' });
-    }
-  } else {
-    // Handle other HTTP methods (if any)
-    res.status(405).json({ error: 'Method Not Allowed' });
+  const mailOptions = {
+    from: `"${firstName} ${lastName}" <${process.env.ICLOUD_EMAIL}>`,
+    to: process.env.ICLOUD_EMAIL, // you're sending it to yourself
+    subject: `New Message: ${subject}`,
+    text: `
+You received a message from:
+
+Name: ${firstName} ${lastName}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    return res.status(200).json({ message: 'Message sent successfully!' });
+  } catch (error) {
+    console.error('Email sending failed:', error);
+    return res.status(500).json({ error: 'Failed to send message' });
   }
 }
