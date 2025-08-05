@@ -15,7 +15,7 @@ export default function Originals() {
         <h1 className="text-primary-content text-4xl font-italiana text-center text-baseline-content mb-6">
           Original Paintings
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-0 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {artworks.map((art, index) => (
             <motion.div
               key={art.slug}
@@ -24,16 +24,20 @@ export default function Originals() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <Link href={`/originals/${art.slug}`}>
-                <div className="card bg-base-100 shadow-xl hover:scale-105 transition-transform cursor-pointer">
+                <div className="card card-compact card-border bg-base-100 shadow-lg hover:shadow-2xl font-italiana font-bold overflow-hidden"
+>
                   <figure>
-                    <Image
-                      src={art.images[0].url}
-                      alt={art.images[0].alt}
-                      layout="responsive"
-                      width={600}
-                      height={400}
-                      className="object-cover rounded-t-lg"
-                    />
+<Image
+  src={art.images[0].url}
+  alt={art.images[0].alt}
+  width={600}
+  height={400}
+  className="object-cover rounded-t-lg"
+  placeholder="blur"
+  blurDataURL="/placeholder.png" // small placeholder image
+  priority={index < 4} // Only preload the top few
+  loading={index < 4 ? "eager" : "lazy"} // Lazy load the rest
+/>
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{art.title}</h2>
