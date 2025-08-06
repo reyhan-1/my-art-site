@@ -5,9 +5,7 @@ import Head from "next/head";
 export default function Home() {
   const backgrounds = [
     '/welcome8.avif',
-    '/welcome9.avif',
     '/welcome2.avif',
-    '/welcome10.avif',
     '/welcome5.avif',
   ];
 
@@ -24,7 +22,7 @@ export default function Home() {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * backgrounds.length);
       setCurrentBackground(backgrounds[randomIndex]);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
