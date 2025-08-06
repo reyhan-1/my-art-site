@@ -4,8 +4,8 @@ export default function Navbar() {
   return (
     <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
       <nav>
-        <a className="link link-hover">About</a>
-        <a className="link link-hover">Contact</a>
+          <Link href="/about" className="link link-hover">About</Link>
+          <Link href="/contact" className="link link-hover">Contact</Link>
       </nav>
 
       <div className="w-80">
@@ -14,7 +14,7 @@ export default function Navbar() {
           Be the first to know about new paintings and occasional art talks
         </p>
         <Link href="/subscribe" passHref>
-          <button type="button" className="btn btn-primary w-full">
+          <button type="button" className="btn btn-error w-full">
             Join Mailing List
           </button>
         </Link>

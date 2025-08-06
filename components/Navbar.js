@@ -16,7 +16,7 @@ export default function Navbar() {
     <div className="navbar bg-base-100 shadow">
       <div className="flex-1">
         <Link href="/" className="btn btn-ghost" onClick={closeMenu}>
-          <h1 className="text-primary-content font-italiana text-4xl text-gray-900">
+          <h1 className=" font-italiana text-4xl text-gray-400">
             Reyhan Uyanik Art
           </h1>
         </Link>

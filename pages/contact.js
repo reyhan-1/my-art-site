@@ -52,8 +52,8 @@ export default function Contact() {
         <title>Contact | Reyhan Uyanık</title>
       </Head>
 
-<div className="w-full px-4 py-10">
-      <h1 className="text-primary-content text-4xl font-italiana text-center text-baseline-content mb-6">Contact Me</h1>
+    <div className="max-w-3xl mx-auto p-8 ">
+      <h6 className=" text-4xl font-italiana text-center text-base-content mb-6">Contact</h6>
       <p className="text-center max-w-2xl mx-auto mb-10 text-baseline">
         Have a question? Don’t hesitate to send me a message about a commission, available work, or upcoming collections.
       </p>

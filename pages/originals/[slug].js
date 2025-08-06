@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { motion, AnimatePresence } from "framer-motion";
 import artworks from "@/data/artworks";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
@@ -39,7 +38,7 @@ export default function PaintingDetail() {
         <title>{painting.title} | Reyhan Uyanık</title>
       </Head>
     <div className="p-10 flex flex-col lg:flex-row gap-8">
-              {/* Go Back Button */}
+      {/* Go Back Button */}
       <button
         onClick={handleGoBack}
         className="btn btn-ghost w-fit font-mont"
@@ -90,13 +89,15 @@ export default function PaintingDetail() {
            <h1 className="text-3xl font-bold font-italiana">{painting.title}</h1>
             <p className="text-lg font-mont">
               {painting.dimension}{" | "}{painting.description}
-                <div className="badge badge-primary text-lg p-3">Available for Purchase</div>
             </p>
           {painting.sold ? (
             <div className="badge badge-error text-lg p-3">Sold</div>
           ) : (
-              <p> If you’re interested in purchasing, feel free to email me. I’ll provide shipping details and delivery options based on your location.</p>
-            // <button className="btn btn-primary" onClick={handlePurchase}>
+              <div>
+                  <div className="badge badge-primary text-lg p-3">Available for Purchase</div>
+                  <p className="pt-2"> If you’re interested in purchasing, feel free to email me. I’ll provide shipping details and delivery options based on your location.</p>
+              </div>
+              // <button className="btn btn-primary" onClick={handlePurchase}>
             //   Purchase
             // </button>
           )}

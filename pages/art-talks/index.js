@@ -33,18 +33,19 @@ export default function ArtTalks({ posts }) {
     filterPosts();
   }, [selectedCategories, posts]);
 
-  const allCategories = ['painters', 'paintings', 'museums', 'movies'];
+  const allCategories = ['movies','museums', 'painters', 'paintings',  'poems', 'poets'];
 
   return (
     <div className="max-w-7xl mx-auto p-8">
-      <h6 className="text-primary-content text-4xl font-italiana text-center text-baseline-content mb-6">Art Talks</h6>
+      <h6 className=" text-4xl font-italiana text-center text-base-content mb-3">Art Talks</h6>
+      <p className=" text-m text-right pr-10 text-base-content">P.S.: Nothing here is AI written </p>
       {/* Category Filter Buttons */}
       <div className="flex flex-wrap gap-3 justify-center mb-10 ">
         {allCategories.map((cat) => (
           <button
             key={cat}
             className={`badge badge-lg cursor-pointer capitalize transition-all duration-200 hover:scale-105 ${
-              selectedCategories.includes(cat) ? 'badge-primary' : 'badge-ghost'
+              selectedCategories.includes(cat) ? 'badge-accent' : 'badge-ghost'
             }`}
             onClick={() => toggleCategory(cat)}
           >
@@ -52,13 +53,12 @@ export default function ArtTalks({ posts }) {
           </button>
         ))}
       </div>
-
       {/* Display Filtered Posts */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 align-center">
         {filteredPosts.map(({ slug, title, date, excerpt, image, categories }) => (
           <Link href={`/art-talks/${slug}`} key={slug}>
             <div className="group block transform transition-transform hover:scale-105">
-              <div className="bg-white p-6 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-white p-6 border border-black shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="mb-4">
                   <Image
                     src={image || '/default-image.jpg'}
@@ -68,14 +68,13 @@ export default function ArtTalks({ posts }) {
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2 group-hover:text-blue-500">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-2 group-hover:text-primary">
                   {title}
                 </h2>
-                <p className="text-gray-600 text-sm mb-2">{date}</p>
                 <p className="text-gray-700 text-base mb-4">{excerpt}</p>
                 <div className="flex flex-wrap gap-2">
                   {categories?.map((category) => (
-                    <span key={category} className="badge badge-outline badge-accent capitalize">
+                    <span key={category} className="badge badge-soft capitalize">
                       {category}
                     </span>
                   ))}

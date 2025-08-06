@@ -82,7 +82,7 @@ const artworks = [
     ],
     price: "",
     sold: true,
-    dimension: "30x40 cm",
+    dimension: "25x25 cm",
     description: "Oil on canvas, 2025",
   },
   {

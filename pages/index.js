@@ -24,7 +24,7 @@ export default function Home() {
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * backgrounds.length);
       setCurrentBackground(backgrounds[randomIndex]);
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -58,7 +58,7 @@ export default function Home() {
           </blockquote>
 
           <p className="text-md md:text-lg font-semibold text-primary-content text-right max-w-3xl mx-auto">
-            — <span className="text-secondary italic">Dead Poet’s Society</span>
+            — <span className="text-secondary font-shadows-into-light italic">Dead Poet’s Society</span>
           </p>
         </div>
       </div>

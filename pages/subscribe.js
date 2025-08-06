@@ -57,61 +57,60 @@ export default function SubscribePage() {
       <Head>
         <title> Subscribe | Reyhan Uyanık</title>
       </Head>
-    <div className="min-h-screen flex items-center justify-center bg-base-100 px-4">
-      <div className="w-full max-w-md bg-base-200 p-8 rounded-xl shadow-xl text-center">
-        {subscribed ? (
-          <h1 className="text-3xl font-bold font-shadows-into-light">
-            Thanks for subscribing!
-          </h1>
-        ) : (
-          <>
-            <h1 className="text-3xl font-bold mb-6 font-italiana">
-              Join My Mailing List
-            </h1>
-            <p className="mb-6">Be the first to know about new paintings and occasional art talks</p>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  className="input input-bordered w-full"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  className="input input-bordered w-full"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  className="input input-bordered w-full"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <button type="submit" className="btn btn-primary w-full" disabled={loading}>
-                {loading ? 'Subscribing...' : 'Subscribe'}
-              </button>
-              {status && <p className="text-sm mt-4">{status}</p>}
-            </form>
-          </>
-        )}
-      </div>
-    </div>
+<h6 className="pt-10 text-base-content text-4xl font-italiana text-center mb-6">
+  Join My Mailing List
+</h6>
+
+<div className=" flex justify-center pb-10">
+  <div className="w-full max-w-screen-md bg-base-200 p-8 rounded-xl shadow-xl border border-black text-center">
+    {subscribed ? (
+      <h1 className="text-3xl font-bold font-shadows-into-light">
+        Thanks for subscribing!
+      </h1>
+    ) : (
+      <>
+        <p className="mb-6 ">
+          Be the first to know about new paintings and occasional yapping about art.
+        </p>
+        <form onSubmit={handleSubmit}>
+          <div className="flex flex-col  md:flex-row gap-4 mb-4">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              className="input input-bordered w-full"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              className="input input-bordered w-full"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              className="input input-bordered w-full"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary w-full" disabled={loading}>
+            {loading ? 'Subscribing...' : 'Subscribe'}
+          </button>
+          {status && <p className="text-sm mt-4">{status}</p>}
+        </form>
+      </>
+    )}
+  </div>
+</div>
         </>
   );
 }

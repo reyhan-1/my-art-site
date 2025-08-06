@@ -12,7 +12,7 @@ export default function Originals() {
       </Head>
 
       <div className="p-10">
-        <h1 className="text-primary-content text-4xl font-italiana text-center text-baseline-content mb-6">
+        <h1 className=" text-4xl font-italiana text-center text-base-content mb-6">
           Original Paintings
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

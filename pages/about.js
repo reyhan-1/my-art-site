@@ -9,19 +9,16 @@ export default function About() {
         <title>About Me | Reyhan Uyanık</title>
       </Head>
 
-      <article className="max-w-3xl mx-auto p-6">
-
-        <h1 className="text-primary-content text-4xl font-italiana text-center text-baseline-content mb-6">
-          About Me
-        </h1>
+    <article className="max-w-3xl mx-auto p-8 ">
+      <h6 className="text-base-content text-4xl font-italiana text-center mb-6">About Me</h6>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="flex justify-center md:justify-start">
             <Image
-              src="/reyhan.avif"
+              src="/reyhan.JPG"
               alt="Reyhan Uyanık"
-              width={400}
-              height={400}
+              width={500}
+              height={500}
               className="rounded-xl shadow-lg object-cover"
             />
           </div>
@@ -34,12 +31,14 @@ export default function About() {
 
             <p>
               I’ve been doodling and painting since forever, but it wasn’t until January 2025 that I finally started taking painting lessons.
-              And I’m loving every minute of it. It’s reminded me how much I’ve missed being a student — learning new perspectives that change the way I think and see the world.
-            </p>
+           </p>
           </div>
         </div>
-
-                    <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 mt-6">
+        <p className="pt-5 prose prose-lg  text-base-content  max-w-none leading-relaxed">
+           And I’m loving every minute of it. It’s reminded me how much I’ve missed being a student: learning new perspectives that change the way I think and see the world.
+          Anything that grows wildflowers from the cracks in my brain.
+            </p>
+        <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 mt-6">
               Ethan Hawke expresses why art is vital so much more eloquently than I can here(especially around the 7th minute):
             </blockquote>
         {/* YouTube Embed with consistent horizontal padding */}
@@ -53,17 +52,17 @@ export default function About() {
           ></iframe>
         </div>
 
-        <p className="mt-10 text-base-content">
+        <p className="prose prose-lg pt-10 pb-10 text-base-content  max-w-none leading-relaxed">
           Thank you for being here. Feel free to explore my{' '}
           <Link href="/paintings" className="text-secondary hover:text-warning transition">
             paintings
-          </Link>, read my{' '}
+          </Link>. Read about my favorite museums, paintings, painters, poets, poems, and movies in the  {' '}
           <Link href="/art-talks" className="text-secondary hover:text-accent transition">
-            Art Talks
-          </Link>, or{' '}
+            art talks
+          </Link> section. I don&#39;t use AI in my writings. You’re also welcome to{' '}
           <Link href="/contact" className="text-secondary hover:text-info transition">
             get in touch
-          </Link>.
+          </Link>!
         </p>
       </article>
     </>
