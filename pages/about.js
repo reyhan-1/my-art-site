@@ -15,10 +15,10 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="flex justify-center md:justify-start">
             <Image
-              src="/reyhan.JPG"
+              src="/reyhan.avif"
               alt="Reyhan Uyanık"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               className="rounded-xl shadow-lg object-cover"
             />
           </div>
@@ -30,14 +30,17 @@ export default function About() {
             </p>
 
             <p>
+              A perfect day for me would definitely include a museum visit and a glass of wine with a strong nose. I love the way art makes me question things.
               I’ve been doodling and painting since forever, but it wasn’t until January 2025 that I finally started taking painting lessons.
            </p>
           </div>
         </div>
-        <p className="pt-5 prose prose-lg  text-base-content  max-w-none leading-relaxed">
+      <div className="prose prose-lg  text-base-content  max-w-none leading-relaxed">
+        <p>
            And I’m loving every minute of it. It’s reminded me how much I’ve missed being a student: learning new perspectives that change the way I think and see the world.
           Anything that grows wildflowers from the cracks in my brain.
             </p>
+      </div>
         <blockquote className="border-l-4 border-primary pl-4 italic text-gray-400 mt-6">
               Ethan Hawke expresses why art is vital so much more eloquently than I can here(especially around the 7th minute):
             </blockquote>
