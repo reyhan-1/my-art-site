@@ -54,7 +54,7 @@ export default function About() {
 
         <p className="prose prose-lg pt-10 pb-10 text-base-content  max-w-none leading-relaxed">
           Thank you for being here. Feel free to explore my{' '}
-          <Link href="/paintings" className="text-secondary hover:text-warning transition">
+          <Link href="/originals" className="text-secondary hover:text-warning transition">
             paintings
           </Link>. Read about my favorite museums, paintings, painters, poets, poems, and movies in the  {' '}
           <Link href="/art-talks" className="text-secondary hover:text-accent transition">
