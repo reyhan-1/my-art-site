@@ -10,7 +10,7 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="sticky top-0 z-50 bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse" onClick={closeMenu}>
           <span className="self-center text-2xl font-italiana whitespace-nowrap dark:text-white">
