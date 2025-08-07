@@ -1,8 +1,8 @@
 ---
 title: "Things I Didn't Know I Loved"
-date: "2025-08-06"
+date: "AUGUST 6, 2025"
 image: "/nazim-hikmet.webp"
-categories: ["poems", "poets"]
+categories: ["poems"]
 imagetitle: "Nâzım Hikmet, 1902–1963"
 painter: ""
 excerpt: "Take a pause. Seeing the beauty in things is being in love."

@@ -3,6 +3,8 @@ import artworks from "@/data/artworks";
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import Head from "next/head";
+import SubscribeSection from "@/components/SubscribeSection";
+
 
 export default function Originals() {
   return (
@@ -10,44 +12,50 @@ export default function Originals() {
       <Head>
         <title>Originals | Reyhan Uyanık</title>
       </Head>
-
-      <div className="p-10">
-        <h1 className=" text-4xl font-italiana text-center text-base-content mb-6">
+      {/* Originals Section */}
+      <div className="px-6 md:px-10 py-16">
+        <h2 className="text-4xl text-center font-serif  m-10">
           Original Paintings
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {artworks.map((art, index) => (
-            <motion.div
-              key={art.slug}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <Link href={`/originals/${art.slug}`}>
-                <div className="card card-compact card-border bg-base-100 shadow-lg hover:shadow-2xl font-italiana font-bold overflow-hidden"
->
-                  <figure>
-<Image
-  src={art.images[0].url}
-  alt={art.images[0].alt}
-  width={600}
-  height={400}
-  className="object-cover rounded-t-lg"
-  placeholder="blur"
-  blurDataURL="/placeholder.png" // small placeholder image
-  priority={index < 4} // Only preload the top few
-  loading={index < 4 ? "eager" : "lazy"} // Lazy load the rest
-/>
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">{art.title}</h2>
-                    {art.sold && <div className="badge badge-error">Sold</div>}
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+        </h2>
+
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+    {artworks.map((art, index) => (
+  <motion.div
+    key={art.slug}
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4, delay: index * 0.1 }}
+  >
+    <Link href={`/originals/${art.slug}`} prefetch
+      className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
+    >
+      <figure className="relative w-full h-80">
+        <Image
+          src={art.images[0].url}
+          alt={art.images[0].alt}
+          fill
+          className="object-cover"
+          priority={index < 4}
+          loading={index < 4 ? 'eager' : 'lazy'}
+        />
+      </figure>
+      <div className="p-6">
+        <h3 className="text-xl font-serif mb-2 text-gray-900">
+          {art.title}
+          {art.sold && (
+            <span className="inline-block bg-blue-900 text-white text-xs font-semibold px-2 py-1 ml-4 ">
+              Sold
+            </span>
+          )}
+        </h3>
+        <h2 className="text-l font-quicksand mb-2 text-gray-500">{art.description}</h2>
+      </div>
+    </Link>
+  </motion.div>
+))}
+
+        </section>
       </div>
     </>
   );

@@ -1,8 +1,8 @@
 ---
 title: "On Living"
-date: "2025-08-06"
+date: "AUGUST 6, 2025"
 image: "/nazim-hikmet.webp"
-categories: ["poems", "poets"]
+categories: ["poems"]
 imagetitle: "Nâzım Hikmet, 1902–1963"
 painter: ""
 excerpt: "The true meaning of being alive is to take it seriously like a squirrel."
@@ -31,7 +31,7 @@ even when you are seventy, you must plant olive trees-
 not because you think they will be left to your children,  
 but because you don't believe in death although you are afraid of it,   
 because, I mean, life weighs heavier.   
-<span style="font-family: 'Shadows Into Light', cursive;">1947</span>
+<span style="font-family: 'Quicksand', cursive;">1947</span>
 
 <br><br><br><br>
 *II*      
@@ -62,7 +62,7 @@ I mean, with the outer world beyond the walls.
 
 I mean, however and wherever we are,  
 we must live as if there is no death...     
-<span style="font-family: 'Shadows Into Light', cursive;">1948</span>
+<span style="font-family: 'Quicksand', cursive;">1948</span>
 
 <br>
 <br>
@@ -86,4 +86,4 @@ You must feel the pain of this now,
 You must feel the grief right now.  
 You must love this world so much  
 to be able to say "I lived"...          
-<span style="font-family: 'Shadows Into Light', cursive;">1948</span>
+<span style="font-family: 'Quicksand', cursive;">1948</span>

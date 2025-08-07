@@ -1,35 +1,28 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
+export default function Document(props) {
+  // Get the current route path from Next.js data
+  const currentPath = props.__NEXT_DATA__.page || '';
+
+  // Check if this is the homepage (adjust if you want other pages)
+  const isHomePage = currentPath === '/';
+
   return (
-    <Html lang="en">
+    <Html
+      lang="en"
+      data-theme="cupcake"
+      style={{ backgroundColor: isHomePage ? 'black' : 'white' }}
+    >
       <Head>
-        {/* Dark mode prevention script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                try {
-                  const theme = localStorage.getItem('theme');
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (theme === 'dark' || (!theme && prefersDark)) {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch (_) {}
-              })();
-            `,
-          }}
-        />
-        {/* Preconnect for Google Fonts */}
+        {/* Font preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        {/* Load only needed fonts */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&family=Shadows+Into+Light&family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300&family=Quicksand:wght@300&family=Urbanist&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body style={{ backgroundColor: isHomePage ? 'black' : 'white' }}>
         <Main />
         <NextScript />
       </body>

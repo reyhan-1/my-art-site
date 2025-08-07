@@ -7,9 +7,8 @@ import { useEffect, useState } from 'react';
 
 export default function ArtTalks({ posts }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState(posts); // Initialize with all posts
+  const [filteredPosts, setFilteredPosts] = useState(posts);
 
-  // Function to toggle categories
   const toggleCategory = (category) => {
     setSelectedCategories((prev) =>
       prev.includes(category)
@@ -18,7 +17,6 @@ export default function ArtTalks({ posts }) {
     );
   };
 
-  // Filter posts based on selected categories
   useEffect(() => {
     const filterPosts = () => {
       if (selectedCategories.length === 0) {
@@ -36,16 +34,18 @@ export default function ArtTalks({ posts }) {
   const allCategories = ['movies','museums', 'painters', 'paintings',  'poems', 'poets'];
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
-      <h6 className=" text-4xl font-italiana text-center text-base-content mb-3">Art Talks</h6>
-      <p className=" text-m text-right pr-10 text-base-content">P.S.: Nothing here is AI written </p>
+    <div className="px-6 md:px-10 py-16">
+      <h6 className="text-4xl text-center font-serif m-10">Art Talks</h6>
+
       {/* Category Filter Buttons */}
-      <div className="flex flex-wrap gap-3 justify-center mb-10 ">
+      <div className="flex flex-wrap gap-3 justify-center mb-10">
         {allCategories.map((cat) => (
           <button
             key={cat}
-            className={`badge badge-lg cursor-pointer capitalize transition-all duration-200 hover:scale-105 ${
-              selectedCategories.includes(cat) ? 'badge-accent' : 'badge-ghost'
+            className={`px-3 py-1 text-sm rounded-full capitalize transition-all duration-200 hover:scale-105 ${
+              selectedCategories.includes(cat)
+                ? 'bg-indigo-950 text-white'
+                : 'bg-gray-200 text-gray-800'
             }`}
             onClick={() => toggleCategory(cat)}
           >
@@ -53,37 +53,38 @@ export default function ArtTalks({ posts }) {
           </button>
         ))}
       </div>
-      {/* Display Filtered Posts */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 align-center">
-        {filteredPosts.map(({ slug, title, date, excerpt, image, categories }) => (
-          <Link href={`/art-talks/${slug}`} key={slug}>
-            <div className="group block transform transition-transform hover:scale-105">
-              <div className="bg-white p-6 border border-black shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="mb-4">
-                  <Image
-                    src={image || '/default-image.jpg'}
-                    alt={title}
-                  width={150}
-                  height={150}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2 group-hover:text-primary">
-                  {title}
-                </h2>
-                <p className="text-gray-700 text-base mb-4">{excerpt}</p>
-                <div className="flex flex-wrap gap-2">
-                  {categories?.map((category) => (
-                    <span key={category} className="badge badge-soft capitalize">
-                      {category}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Link>
-        ))}
+
+      <p className="text-sm text-right pr-10 text-gray-500">
+        P.S.: Nothing here is AI written
+      </p>
+
+      {/* Cards */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-10">
+  {filteredPosts.map(({ slug, title, date, excerpt, image, categories }, index) => (
+    <Link
+      href={`/art-talks/${slug}`}
+      key={slug}
+      className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
+    >
+      <figure className="relative w-full h-80">
+        <Image
+          src={image || '/default-image.jpg'}
+          alt={title}
+          fill
+          className="object-cover"
+          loading={index < 3 ? 'eager' : 'lazy'}
+        />
+      </figure>
+      <div className="p-6">
+        <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">
+          {title}
+        </h2>
+        <p className="text-sm text-gray-600 mb-4">{excerpt}</p>
+        <p className="text-sm text-center font-quicksand text-gray-600 mb-4">{date}</p>
       </div>
+    </Link>
+  ))}
+</div>
     </div>
   );
 }
@@ -103,7 +104,7 @@ export async function getStaticProps() {
       title: data.title,
       date: data.date,
       excerpt: excerpt || data.excerpt || 'No excerpt available.',
-      image: data.image || '/default-image.jpg',
+      image: data.image || '/welcome4.avif',
       categories: data.categories || [],
     };
   });

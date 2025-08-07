@@ -52,87 +52,116 @@ export default function Contact() {
         <title>Contact | Reyhan Uyanık</title>
       </Head>
 
-    <div className="max-w-3xl mx-auto p-8 ">
-      <h6 className=" text-4xl font-italiana text-center text-base-content mb-6">Contact</h6>
-      <p className="text-center max-w-2xl mx-auto mb-10 text-baseline">
+    <div className="px-6 md:px-10 py-16">
+      <h6 className=" text-4xl text-center font-serif  m-10">Contact</h6>
+      <p className="text-center font-quicksand max-w-xl mx-auto mb-10 text-baseline">
         Have a question? Don’t hesitate to send me a message about a commission, available work, or upcoming collections.
       </p>
 
-      {/* Centered form container */}
-      <div className="flex justify-center">
-        <form onSubmit={handleSubmit} className="w-full max-w-2xl">
-          <div className="grid gap-4">
-            <div className="flex gap-4">
-              <div className="w-1/2">
-                <label className="block text-sm">First Name (required)</label>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                  className="input input-bordered w-full"
-                  required
-                />
-              </div>
-              <div className="w-1/2">
-                <label className="block text-sm">Last Name (required)</label>
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                  className="input input-bordered w-full"
-                  required
-                />
-              </div>
-            </div>
-
+      <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
             <div>
-              <label className="block text-sm">Email Address (required)</label>
+              <label htmlFor="firstName" className="block mb-2 text-sm font-urbanist text-gray-800">
+                First Name <span className="text-red-500">*</span>
+              </label>
               <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="input input-bordered w-full"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm">Subject (required)</label>
-              <input
+                id="firstName"
+                name="firstName"
                 type="text"
-                name="subject"
-                value={formData.subject}
+                value={formData.firstName}
                 onChange={handleInputChange}
-                className="input input-bordered w-full"
                 required
+                className="w-full border border-gray-300 font-urbanist px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                placeholder="Your first name"
               />
             </div>
 
             <div>
-              <label className="block text-sm">Message (required)</label>
-              <textarea
-                name="message"
-                value={formData.message}
+              <label htmlFor="lastName" className="block mb-2 text-sm font-urbanist text-gray-800">
+                Last Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                value={formData.lastName}
                 onChange={handleInputChange}
-                className="textarea textarea-bordered w-full"
                 required
+                className="w-full border border-gray-300 px-4 py-3 font-urbanist text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                placeholder="Your last name"
               />
             </div>
-
-            <button
-              type="submit"
-              className="btn btn-primary w-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
           </div>
-          {formStatus && <p className="mt-4 text-center">{formStatus}</p>}
+
+          <div>
+            <label htmlFor="email" className="block mb-2 text-sm font-urbanist text-gray-800">
+              Email Address <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              className="w-full border border-gray-300  font-urbanist px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="subject" className="block mb-2 text-sm font-urbanist text-gray-800">
+              Subject <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              value={formData.subject}
+              onChange={handleInputChange}
+              required
+              className="w-full border border-gray-300 font-urbanist px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+              placeholder="Subject"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block mb-2 text-sm font-urbanist text-gray-800">
+              Message <span className="text-red-500">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={6}
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+              className="w-full border border-gray-300 font-urbanist px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none"
+              placeholder="Write your message here..."
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`w-full py-3 text-white text-lg font-quicksand transition
+              ${isSubmitting ? 'bg-indigo-300 cursor-not-allowed' : 'bg-black hover:bg-gray-700'}
+            `}
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </button>
+
+          {formStatus && (
+            <p
+              className={`mt-4 text-center font-quicksand ${
+                formStatus.includes('Sent') ? 'text-black' : 'text-red-950'
+              }`}
+              role="alert"
+            >
+              {formStatus}
+            </p>
+          )}
         </form>
-      </div>
     </div>
         </>
   );

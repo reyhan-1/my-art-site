@@ -1,29 +1,73 @@
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [subscriber, setSubscriber] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+  });
+  const [status, setStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSubscriber(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setStatus('');
+
+    if (!subscriber.firstName.trim() || !subscriber.lastName.trim()) {
+      setStatus('Please enter your first and last name.');
+      return;
+    }
+    if (!subscriber.email || !subscriber.email.includes('@')) {
+      setStatus('Please enter a valid email address.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatus('Subscribing...');
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(subscriber),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus('Thanks for subscribing!');
+        setSubscriber({ firstName: '', lastName: '', email: '' });
+      } else {
+        setStatus(data.error || 'Failed to subscribe.');
+      }
+    } catch (error) {
+      setStatus('Something went wrong.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
-      <nav>
-          <Link href="/about" className="link link-hover">About</Link>
-          <Link href="/contact" className="link link-hover">Contact</Link>
-      </nav>
+    <footer className="w-full bg-white text-gray-400 font-urbanist px-6 py-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {/* Left Nav */}
+        <nav className="space-y-2 font-quicksand">
+          <Link href="/about" className="block">About</Link>
+          <Link href="/contact" className="block">Contact</Link>
+        </nav>
 
-      <div className="w-80">
-        <h6 className="font-shadows-into-light footer-title">Join my mailing list</h6>
-        <p className="mb-4 text-sm">
-          Be the first to know about new paintings and occasional art talks
-        </p>
-        <Link href="/subscribe" passHref>
-          <button type="button" className="btn btn-error w-full">
-            Join Mailing List
-          </button>
-        </Link>
-      </div>
 
- <nav>
-        <h6 className="footer-title">Social</h6>
-        <div className="grid grid-flow-col gap-4">
-          {/* Instagram Link */}
+        {/* Social Icons */}
+        <div>
+          <h6 className=" font-quicksand pb-2">Social</h6>
+          <div className="flex space-x-4">
+                     {/* Instagram Link */}
           <a
             href="http://instagram.com/uyanikre"
             target="_blank"
@@ -61,8 +105,9 @@ export default function Navbar() {
               />
             </svg>
           </a>
+          </div>
         </div>
-      </nav>
+      </div>
     </footer>
   );
 }

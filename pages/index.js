@@ -1,65 +1,59 @@
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Head from "next/head";
+import { useState, useEffect, useRef } from 'react';
+import Head from 'next/head';
+import SubscribeSection from "@/components/SubscribeSection";
 
 export default function Home() {
-  const backgrounds = [
-    '/welcome8.avif',
-    '/welcome2.avif',
-    '/welcome5.avif',
-  ];
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef(null);
 
-  const [currentBackground, setCurrentBackground] = useState(backgrounds[0]);
-
-  // Preload images and set background every 10s
   useEffect(() => {
-    // Preload all backgrounds
-    backgrounds.forEach((bg) => {
-      const img = new Image();
-      img.src = bg;
-    });
-
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * backgrounds.length);
-      setCurrentBackground(backgrounds[randomIndex]);
-    }, 10000);
-
-    return () => clearInterval(interval);
+    // Show black screen initially for 1 second, then show video
+    const timer = setTimeout(() => setShowVideo(true), 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
       <Head>
         <title>Reyhan Uyanık</title>
-        {backgrounds.map((bg, i) => (
-          <link key={i} rel="preload" as="image" href={bg} type="image/avif" />
-        ))}
       </Head>
 
-      <div
-        className="hero min-h-screen relative transition-opacity duration-1000 ease-in-out"
-        style={{
-          backgroundImage: `url(${currentBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* Main content */}
-        <div className="relative z-10 text-center px-4 md:px-8 py-12">
-          <h1 className="text-3xl md:text-5xl font-bold mb-8 text-primary-content font-italiana drop-shadow-lg">
-            Welcome to My Painting Collection
-          </h1>
+      <div className="min-h-screen w-full relative overflow-hidden bg-black">
+        {/* Show black screen for 1 sec before video loads */}
+        {!showVideo && (
+          <div className="absolute inset-0 bg-black z-20"></div>
+        )}
 
-          <blockquote className="text-lg md:text-xl italic font-medium text-primary-content max-w-3xl mx-auto mb-6">
+        {/* Video background */}
+        {showVideo && (
+          <video
+            ref={videoRef}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            src="/background.webm"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+        )}
+
+        {/* Overlay for darkening */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+
+        {/* Quote content */}
+        <div className="absolute bottom-24 right-12 z-30 max-w-xl text-right px-4">
+          <blockquote className="text-white text-lg md:text-xl italic font-quicksand">
             “Medicine, law, business, engineering, these are all noble pursuits, and
             necessary to sustain life. But poetry, beauty, romance, love, these are what we stay alive for.”
           </blockquote>
-
-          <p className="text-md md:text-lg font-semibold text-primary-content text-right max-w-3xl mx-auto">
-            — <span className="text-secondary font-shadows-into-light italic">Dead Poet’s Society</span>
+          <p className="text-white text-md md:text-lg font-semibold mt-4 font-urbanist">
+            — Dead Poet’s Society
           </p>
         </div>
       </div>
+
+      <SubscribeSection />
     </>
   );
 }

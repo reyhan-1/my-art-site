@@ -55,30 +55,17 @@ export default function Post({ post }) {
 
 
   return (
-    <article className="max-w-3xl mx-auto p-8 ">
-        <button
-            onClick={() => router.back()}
-            hileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn btn-ghost w-fit font-mont"
-        >← Go back</button>
-
-      <h6 className=" text-4xl font-italiana text-center text-base-content mb-6">Art Talks: {frontmatter.title}</h6>
+    <article className="max-w-3xl mx-auto px-6 md:px-10 py-16">
+      <h6 className=" text-4xl text-center font-serif  m-10">Art Talks: {frontmatter.title}</h6>
 
       {/* Post Title and Excerpt */}
-      <p className="text-base text-gray-400 mb-4">{frontmatter.excerpt}</p>
+      <p className="text-2xl text-center font-quicksand text-gray-500  m-10">{frontmatter.excerpt}</p>
 
       {/* Category Badges - Clickable with Hover Effect */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {allCategories.map((category) => (
-          <Link
-            key={category}
-            href={`/art-talks?category=${category}`}
-            className="badge badge-outline badge-accent cursor-pointer capitalize transition-all duration-300 hover:bg-accent hover:text-white"
-          >
-            {category}
-          </Link>
-        ))}
+{allCategories.map((category) => (
+  <p key={category} className="font-urbanist">{category}</p>
+))}
       </div>
 
       {/* Post Image */}
@@ -90,7 +77,7 @@ export default function Post({ post }) {
             title={frontmatter.imagetitle}
             width={900}  // Adjust the size as needed
             height={500}  // Keep the height proportional
-            className="object-cover mx-auto rounded-xl"
+            className="object-cover mx-auto "
           />
           {frontmatter.imagetitle && (
             <p className="text-base text-gray-400 text-center">{frontmatter.imagetitle}</p>
