@@ -17,4 +17,5 @@ module.exports = {
   // daisyui: {
   //   themes: ['cupcake'], // ✅ sets a white background by default
   // },
+    darkMode: false,
 };
