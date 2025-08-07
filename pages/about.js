@@ -23,7 +23,7 @@ export default function About() {
             />
           </div>
 
-          <div className="prose prose-lg text-base-content max-w-none leading-relaxed px-14 md:px-0">
+          <div className="prose prose-lg max-w-none leading-relaxed px-14 md:px-0">
             <p>
               Hi, I’m <strong>Reyhan Uyanık</strong>, a software engineer with a deep love for creating and colors.
               I’ve worked in fast-paced startups across the US, building full-stack applications and automating systems.
@@ -37,7 +37,7 @@ export default function About() {
            </p>
           </div>
         </div>
-      <div className="prose prose-lg text-base-content max-w-none leading-relaxed px-14 md:px-0">
+      <div className="prose prose-lg max-w-none leading-relaxed px-14 md:px-0">
         <p>
            And I’m loving every minute of it.  Painting has reminded me how much I love being a student: learning new perspectives that change the way I think and how I see the world.
           Anything that grows wildflowers from the cracks in my brain.
@@ -57,7 +57,7 @@ export default function About() {
           ></iframe>
         </div>
 
-        <p className="prose prose-lg text-base-content max-w-none leading-relaxed px-14 md:px-0">
+        <p className="prose prose-lg max-w-none leading-relaxed px-14 md:px-0">
           Thank you for being here. Feel free to explore my{' '}
           <Link href="/originals" className=" hover:text-rose-800  transition">
             paintings

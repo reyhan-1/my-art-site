@@ -38,7 +38,7 @@ export default function PaintingDetail() {
         {/* Left - Gallery */}
         <div className="flex-1">
           <div className="grid gap-4">
-            <div className="relative w-full h-[700px] rounded-lg overflow-hidden shadow-lg bg-base-200">
+            <div className="relative w-full h-[700px] rounded-lg overflow-hidden shadow-lg ">
               <Image
                 src={painting.images[selectedImage].url}
                 alt={painting.images[selectedImage].alt}

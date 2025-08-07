@@ -18,7 +18,7 @@ export default function Home() {
         <title>Reyhan Uyanık</title>
       </Head>
 
-      <div className="min-h-screen w-full relative overflow-hidden bg-black">
+      <div className="min-h-screen w-full relative overflow-hidden">
         {/* Show black screen for 1 sec before video loads */}
         {!showVideo && (
           <div className="absolute inset-0 bg-black z-20"></div>

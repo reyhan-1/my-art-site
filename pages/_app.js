@@ -9,6 +9,7 @@ export default function App({ Component, pageProps, router }) {
   return (
     <CartProvider>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />
       <main className="accent">
@@ -24,11 +25,13 @@ export default function App({ Component, pageProps, router }) {
         </motion.div>
       </main>
       <Footer />
-        <footer className="footer sm:footer-horizontal footer-center p-4">
-  <aside>
-    <p className="font-quicksand text-center text-sm"> © REYHAN UYANIK ART {new Date().getFullYear()} | WEBSITE BY Reyhan Uyanik</p>
-  </aside>
-</footer>
+      <footer className="footer sm:footer-horizontal bg-white footer-center p-4">
+        <aside>
+          <p className="font-quicksand text-center text-gray-800 text-sm">
+            © REYHAN UYANIK ART {new Date().getFullYear()} | WEBSITE BY Reyhan Uyanik
+          </p>
+        </aside>
+      </footer>
     </CartProvider>
   );
 }

@@ -80,13 +80,13 @@ export default function Post({ post }) {
             className="object-cover mx-auto "
           />
           {frontmatter.imagetitle && (
-            <p className="text-base text-gray-400 text-center">{frontmatter.imagetitle}</p>
+            <p className=" text-gray-400 text-center">{frontmatter.imagetitle}</p>
           )}
         </div>
       )}
 
       {/* Post Content (Markdown) */}
-      <div className="prose prose-lg text-base-content">
+      <div className="prose prose-lg">
         <Markdown>{content}</Markdown>
       </div>
     </article>

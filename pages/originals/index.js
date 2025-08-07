@@ -28,7 +28,7 @@ export default function Originals() {
     transition={{ duration: 0.4, delay: index * 0.1 }}
   >
     <Link href={`/originals/${art.slug}`} prefetch
-      className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
+      className="block overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-md"
     >
       <figure className="relative w-full h-80">
         <Image
