@@ -10,7 +10,6 @@ export default function Document(props) {
   return (
     <Html
       lang="en"
-      data-theme="cupcake"
       style={{ backgroundColor: isHomePage ? 'black' : 'white' }}
     >
       <Head>
