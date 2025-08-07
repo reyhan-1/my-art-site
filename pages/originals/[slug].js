@@ -34,7 +34,7 @@ export default function PaintingDetail() {
         <title>{painting.title} | Reyhan Uyanık</title>
       </Head>
 
-      <div className="p-10 flex flex-col lg:flex-row gap-8 mt-10">
+      <div className="p-10 flex flex-col lg:flex-row gap-8 mt-10 bg-white">
         {/* Left - Gallery */}
         <div className="flex-1">
           <div className="grid gap-4">

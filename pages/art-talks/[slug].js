@@ -61,7 +61,7 @@ export default function Post({ post }) {
         <meta name="description" content={frontmatter.excerpt || 'Art Talks post'} />
       </Head>
 
-      <article className="max-w-3xl mx-auto px-6 md:px-10 py-16">
+      <article className="max-w-3xl mx-auto px-6 md:px-10 py-16 bg-white">
         <h6 className=" text-4xl text-center font-serif  m-10">Art Talks: {frontmatter.title}</h6>
 
         {/* Post Title and Excerpt */}
