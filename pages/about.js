@@ -8,7 +8,7 @@ export default function About() {
       <Head>
         <title>About Me | Reyhan Uyanık</title>
       </Head>
-
+      <div className="bg-white min-h-screen">
     <article className="max-w-3xl mx-auto py-16 bg-white">
       <h6 className=" text-4xl text-center font-serif  m-10">About Me</h6>
 
@@ -70,6 +70,7 @@ export default function About() {
           </Link>!
         </p>
       </article>
+      </div>
     </>
   );
 }
