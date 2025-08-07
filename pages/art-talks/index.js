@@ -4,6 +4,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
 
 export default function ArtTalks({ posts }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -34,58 +35,65 @@ export default function ArtTalks({ posts }) {
   const allCategories = ['movies','museums', 'painters', 'paintings',  'poems', 'poets'];
 
   return (
-    <div className="px-6 md:px-10 py-16">
-      <h6 className="text-4xl text-center font-serif m-10">Art Talks</h6>
+    <>
+      <Head>
+        <title>Art Talks</title>
+        <meta name="description" content="Explore blog posts about movies, museums, painters, paintings, poems, and poets." />
+      </Head>
 
-      {/* Category Filter Buttons */}
-      <div className="flex flex-wrap gap-3 justify-center mb-10">
-        {allCategories.map((cat) => (
-          <button
-            key={cat}
-            className={`px-3 py-1 text-sm rounded-full capitalize transition-all duration-200 hover:scale-105 ${
-              selectedCategories.includes(cat)
-                ? 'bg-indigo-950 text-white'
-                : 'bg-gray-200 text-gray-800'
-            }`}
-            onClick={() => toggleCategory(cat)}
-          >
-            {cat}
-          </button>
-        ))}
+      <div className="px-6 md:px-10 py-16 bg-white">
+        <h6 className="text-4xl text-center font-serif m-10">Art Talks</h6>
+
+        {/* Category Filter Buttons */}
+        <div className="flex flex-wrap gap-3 justify-center mb-10">
+          {allCategories.map((cat) => (
+            <button
+              key={cat}
+              className={`px-3 py-1 text-sm rounded-full capitalize transition-all duration-200 hover:scale-105 ${
+                selectedCategories.includes(cat)
+                  ? 'bg-indigo-950 text-white'
+                  : 'bg-gray-200 text-gray-800'
+              }`}
+              onClick={() => toggleCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <p className="text-sm text-right pr-10 text-gray-500">
+          P.S.: Nothing here is AI written
+        </p>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-10">
+          {filteredPosts.map(({ slug, title, date, excerpt, image, categories }, index) => (
+            <Link
+              href={`/art-talks/${slug}`}
+              key={slug}
+              className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
+            >
+              <figure className="relative w-full h-80">
+                <Image
+                  src={image || '/default-image.jpg'}
+                  alt={title}
+                  fill
+                  className="object-cover"
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                />
+              </figure>
+              <div className="p-6">
+                <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">
+                  {title}
+                </h2>
+                <p className="text-sm text-gray-600 mb-4">{excerpt}</p>
+                <p className="text-sm text-center font-quicksand text-gray-600 mb-4">{date}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-
-      <p className="text-sm text-right pr-10 text-gray-500">
-        P.S.: Nothing here is AI written
-      </p>
-
-      {/* Cards */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-10">
-  {filteredPosts.map(({ slug, title, date, excerpt, image, categories }, index) => (
-    <Link
-      href={`/art-talks/${slug}`}
-      key={slug}
-      className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
-    >
-      <figure className="relative w-full h-80">
-        <Image
-          src={image || '/default-image.jpg'}
-          alt={title}
-          fill
-          className="object-cover"
-          loading={index < 3 ? 'eager' : 'lazy'}
-        />
-      </figure>
-      <div className="p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">
-          {title}
-        </h2>
-        <p className="text-sm text-gray-600 mb-4">{excerpt}</p>
-        <p className="text-sm text-center font-quicksand text-gray-600 mb-4">{date}</p>
-      </div>
-    </Link>
-  ))}
-</div>
-    </div>
+    </>
   );
 }
 

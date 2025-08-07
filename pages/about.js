@@ -9,7 +9,7 @@ export default function About() {
         <title>About Me | Reyhan Uyanık</title>
       </Head>
 
-    <article className="max-w-3xl mx-auto py-16 ">
+    <article className="max-w-3xl mx-auto py-16 bg-white">
       <h6 className=" text-4xl text-center font-serif  m-10">About Me</h6>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-8">

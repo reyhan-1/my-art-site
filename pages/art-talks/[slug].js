@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import Markdown from 'markdown-to-jsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export async function getStaticPaths() {
   const postsDirectory = path.join(process.cwd(), 'posts');
@@ -37,7 +38,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ post }) {
-    const router = useRouter();
+  const router = useRouter();
   const { frontmatter, content } = post;
   const [selectedCategories, setSelectedCategories] = useState([]);
 
@@ -53,43 +54,48 @@ export default function Post({ post }) {
   // Combine the categories in the post's frontmatter and provide clickable links
   const allCategories = frontmatter.categories || [];
 
-
   return (
-    <article className="max-w-3xl mx-auto px-6 md:px-10 py-16">
-      <h6 className=" text-4xl text-center font-serif  m-10">Art Talks: {frontmatter.title}</h6>
+    <>
+      <Head>
+        <title>{frontmatter.title}</title>
+        <meta name="description" content={frontmatter.excerpt || 'Art Talks post'} />
+      </Head>
 
-      {/* Post Title and Excerpt */}
-      <p className="text-2xl text-center font-quicksand text-gray-500  m-10">{frontmatter.excerpt}</p>
+      <article className="max-w-3xl mx-auto px-6 md:px-10 py-16">
+        <h6 className=" text-4xl text-center font-serif  m-10">Art Talks: {frontmatter.title}</h6>
 
-      {/* Category Badges - Clickable with Hover Effect */}
-      <div className="flex flex-wrap gap-2 mb-6">
-{allCategories.map((category) => (
-  <p key={category} className="font-urbanist">{category}</p>
-))}
-      </div>
+        {/* Post Title and Excerpt */}
+        <p className="text-2xl text-center font-quicksand text-gray-500  m-10">{frontmatter.excerpt}</p>
 
-      {/* Post Image */}
-      {frontmatter.image && (
-        <div className="w-full h-auto mb-6">
-          <Image
-            src={frontmatter.image}
-            alt={frontmatter.title}
-            title={frontmatter.imagetitle}
-            width={900}  // Adjust the size as needed
-            height={500}  // Keep the height proportional
-            className="object-cover mx-auto "
-          />
-          {frontmatter.imagetitle && (
-            <p className=" text-gray-400 text-center">{frontmatter.imagetitle}</p>
-          )}
+        {/* Category Badges - Clickable with Hover Effect */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {allCategories.map((category) => (
+            <p key={category} className="font-urbanist">{category}</p>
+          ))}
         </div>
-      )}
 
-      {/* Post Content (Markdown) */}
-      <div className="prose prose-lg">
-        <Markdown>{content}</Markdown>
-      </div>
-    </article>
+        {/* Post Image */}
+        {frontmatter.image && (
+          <div className="w-full h-auto mb-6">
+            <Image
+              src={frontmatter.image}
+              alt={frontmatter.title}
+              title={frontmatter.imagetitle}
+              width={900}  // Adjust the size as needed
+              height={500}  // Keep the height proportional
+              className="object-cover mx-auto "
+            />
+            {frontmatter.imagetitle && (
+              <p className=" text-gray-400 text-center">{frontmatter.imagetitle}</p>
+            )}
+          </div>
+        )}
 
+        {/* Post Content (Markdown) */}
+        <div className="prose prose-lg">
+          <Markdown>{content}</Markdown>
+        </div>
+      </article>
+    </>
   );
 }

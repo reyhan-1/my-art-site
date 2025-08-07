@@ -10,9 +10,6 @@ export default function Document(props) {
       style={{ backgroundColor: isHomePage ? 'black' : 'white' }}
     >
       <Head>
-        {/* ✅ Add viewport meta tag */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         {/* Font preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
@@ -21,10 +18,8 @@ export default function Document(props) {
           rel="stylesheet"
         />
       </Head>
-      <body style={{ backgroundColor: isHomePage ? 'black' : 'white' }}>
         <Main />
         <NextScript />
-      </body>
     </Html>
   );
 }

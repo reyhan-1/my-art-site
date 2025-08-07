@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`w-full fixed top-0 z-50 ${isHome ? 'bg-transparent' : 'bg-black'} text-white`}>
+<nav className={`w-full fixed top-0 z-50 bg-black ${isHome ? 'bg-transparent' : ''} text-white`}>
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between font-quicksand font-light">
         {/* Left: Title */}
         <Link href="/" className="text-base tracking-wide whitespace-nowrap hover:text-rose-300 transition-colors">
