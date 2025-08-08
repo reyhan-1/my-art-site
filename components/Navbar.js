@@ -4,69 +4,74 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { ArrowUpIcon } from '@heroicons/react/24/solid'; // For the scroll-to-top button
+import { ArrowUpIcon } from '@heroicons/react/24/solid';
 
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === '/';
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false); // 👈 New state
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Handle scroll to toggle background & button visibility
   useEffect(() => {
     const handleScroll = () => {
       if (isHome) {
         setScrolled(window.scrollY > 10);
       }
-
-      setShowScrollTop(window.scrollY > 200); // 👈 Show button after 200px
+      setShowScrollTop(window.scrollY > 200);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHome]);
 
-  // Scroll to top handler
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    }, [isOpen]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navLinks = [
+    { href: '/originals', label: 'ORIGINALS' },
+    { href: '/art-talks', label: 'ART TALKS' },
+    { href: '/about', label: 'ABOUT' },
+    { href: '/contact', label: 'CONTACT' },
+  ];
+
   return (
     <>
-      {/* Navbar */}
       <nav
         className={`w-full fixed top-0 z-50 transition-all duration-500 ease-in-out ${
-          isHome
-            ? scrolled
-              ? 'bg-black'
-              : 'bg-transparent'
-            : 'bg-white'
+          isHome ? (scrolled ? 'bg-black' : 'bg-transparent') : 'bg-white'
         } ${isHome ? 'text-white' : 'text-black'}`}
-
       >
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between font-quicksand font-light">
-          {/* Title */}
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between font-quicksand font-light relative">
           <Link
             href="/"
-            className="text-base tracking-wide whitespace-nowrap hover:text-rose-800 transition-colors"
+            className="text-base tracking-wide whitespace-nowrap hover:text-rose-950 transition-colors"
           >
             REYHAN UYANIK ART
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-6 text-sm tracking-wide font-light">
-            {[
-              { href: '/originals', label: 'ORIGINALS' },
-              { href: '/art-talks', label: 'ART TALKS' },
-              { href: '/about', label: 'ABOUT' },
-              { href: '/contact', label: 'CONTACT' },
-            ].map(({ href, label }) => (
+            {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 className={`pb-[2px] transition-all duration-300 border-b ${
-                  pathname === href ? 'border-black' : 'border-transparent'
+                  pathname === href ? (isHome ? 'border-white' : 'border-black') : 'border-transparent'
                 } hover:text-rose-950`}
               >
                 {label}
@@ -74,45 +79,53 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden z-50"
-            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden z-60"
             aria-label="Toggle menu"
+            onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              <XMarkIcon className="h-6 w-6" />
+              <XMarkIcon className="w-8 h-8" />
             ) : (
-              <Bars3Icon className="h-6 w-6" />
+              <Bars3Icon className="w-8 h-8" />
             )}
           </button>
 
-          {/* Mobile Menu */}
+          {/* Mobile menu overlay */}
           {isOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-6 text-lg font-light tracking-wide z-40">
-              {[
-                { href: '/originals', label: 'ORIGINALS' },
-                { href: '/art-talks', label: 'ART TALKS' },
-                { href: '/about', label: 'ABOUT' },
-                { href: '/contact', label: 'CONTACT' },
-              ].map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
+            <div
+              className="fixed inset-0 bg-black bg-opacity-90 text-white md:hidden z-50"
+              onClick={() => setIsOpen(false)}
+            >
+              {/* Prevent link clicks from closing menu */}
+              <div
+                className="flex flex-col justify-center p-8 space-y-8 h-full relative z-50"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
                   onClick={() => setIsOpen(false)}
-                  className={`transition-all duration-300 ease-in-out ${
-                    pathname === href ? 'underline underline-offset-4' : ''
-                  } hover:text-rose-300`}
+                  aria-label="Close menu"
+                  className="absolute top-4 right-4 z-60"
                 >
-                  {label}
-                </Link>
-              ))}
+                  <XMarkIcon className="w-10 h-10 hover:text-rose-400 transition-colors" />
+                </button>
+
+                {navLinks.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="text-lg text-center font-quicksand tracking-wide hover:text-rose-400"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
         </div>
       </nav>
 
-      {/* Scroll to Top Button (bottom-right corner) */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
