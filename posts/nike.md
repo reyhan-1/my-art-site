@@ -2,7 +2,7 @@
 title: "The Beauty of the Broken"
 date: "AUGUST 8, 2025"
 image: "/nike-louvre.avif"
-categories: ["sculpture"]
+categories: ["sculptures"]
 imagetitle: "Winged Victory of Samothrace, 190 BC | 
 On view at Louvre Museum, the top of the monumental Daru staircase."
 painter: ""
