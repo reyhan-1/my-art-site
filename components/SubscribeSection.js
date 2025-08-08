@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function SubscribeSection() {
   const [formData, setFormData] = useState({
@@ -53,14 +54,30 @@ export default function SubscribeSection() {
 
   if (subscribed) {
     return (
-      <div className="bg-[#f0eae3] px-6 py-16">
+      <motion.div
+        className="bg-[#f0eae3] px-6 py-16"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 2 }}
+        // optional, keep your classes for styling
+        // You can keep motion-preset-fade motion-duration-2000 if they apply styles
+        // but fade is handled here by motion props.
+        // className="bg-[#f0eae3] px-6 py-16 motion-preset-fade motion-duration-2000"
+      >
         <h2 className="text-2xl font-serif py-16 text-center mt-16 text-gray-800">Thanks for subscribing!</h2>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <section className="bg-[#f0eae3] px-6 py-16">
+    <motion.section
+      className="bg-[#f0eae3] px-6 py-16 motion-preset-fade motion-duration-2000"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 2 }}
+    >
       <h2 className="text-4xl font-serif text-center mb-4 text-gray-800">
         Join My Mailing List
       </h2>
@@ -110,10 +127,9 @@ export default function SubscribeSection() {
         </div>
 
         {status && (
-          <p
-              className="text-center text-sm text-red-600 font-quicksand mt-2">{status}</p>
+          <p className="text-center text-sm text-red-600 font-quicksand mt-2">{status}</p>
         )}
       </form>
-    </section>
+    </motion.section>
   );
 }

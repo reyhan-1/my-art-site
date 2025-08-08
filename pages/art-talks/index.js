@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 export default function ArtTalks({ posts }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -33,13 +34,16 @@ export default function ArtTalks({ posts }) {
     filterPosts();
   }, [selectedCategories, posts]);
 
-  const allCategories = ['movies','museums', 'painters', 'paintings',  'poems', 'poets'];
+  const allCategories = ['movies', 'museums', 'painters', 'paintings', 'poems', 'poets'];
 
   return (
     <>
       <Head>
         <title>Art Talks</title>
-        <meta name="description" content="Explore blog posts about movies, museums, painters, paintings, poems, and poets." />
+        <meta
+          name="description"
+          content="Explore blog posts about movies, museums, painters, paintings, poems, and poets."
+        />
       </Head>
 
       <div className="px-6 md:px-10 py-16 bg-white">
@@ -68,29 +72,34 @@ export default function ArtTalks({ posts }) {
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-10">
-          {filteredPosts.map(({ slug, title, date, excerpt, image, categories }, index) => (
-            <Link
-              href={`/art-talks/${slug}`}
-              key={slug}
-              className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
+          {filteredPosts.map(({ slug, title, date, excerpt, image }, index) => (
+            <motion.div
+                key={slug}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <figure className="relative w-full h-80">
-                <Image
-                  src={image || '/default-image.jpg'}
-                  alt={title}
-                  fill
-                  className="object-cover"
-                  loading={index < 3 ? 'eager' : 'lazy'}
-                />
-              </figure>
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">
-                  {title}
-                </h2>
-                <p className="text-sm text-gray-600 mb-4">{excerpt}</p>
-                <p className="text-sm text-center font-quicksand text-gray-600 mb-4">{date}</p>
-              </div>
-            </Link>
+              <Link
+                href={`/art-talks/${slug}`}
+                className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
+              >
+                <figure className="relative w-full h-80">
+                  <Image
+                    src={image || '/default-image.jpg'}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                    loading={index < 3 ? 'eager' : 'lazy'}
+                  />
+                </figure>
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">{title}</h2>
+                  <p className="text-sm text-gray-600 mb-4">{excerpt}</p>
+                  <p className="text-sm text-center font-quicksand text-gray-600 mb-4">{date}</p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

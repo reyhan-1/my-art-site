@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Head from "next/head";
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -48,18 +49,24 @@ export default function Contact() {
   };
 
   return (
-      <>
+    <>
       <Head>
         <title>Contact | Reyhan Uyanık</title>
       </Head>
 
-    <div className="px-6 md:px-10 py-16 bg-white">
-      <h6 className=" text-4xl text-center font-serif text-black m-10">Contact</h6>
-      <p className="text-center font-quicksand max-w-xl mx-auto mb-10 text-gray-800">
-        Have a question? Don’t hesitate to send me a message about a commission, available work, or upcoming collections.
-      </p>
+      <motion.div
+        className="px-6 md:px-10 py-16 bg-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h6 className="text-4xl text-center font-serif text-black m-10">Contact</h6>
+        <p className="text-center font-quicksand max-w-xl mx-auto mb-10 text-gray-800">
+          Have a question? Don’t hesitate to send me a message about a commission, available work, or upcoming collections.
+        </p>
 
-      <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
+        <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
             <div>
               <label htmlFor="firstName" className="block mb-2 text-sm font-urbanist text-gray-800">
@@ -142,21 +149,23 @@ export default function Contact() {
             />
           </div>
 
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className={`px-8 py-3 bg-gray-800 text-white font-medium transition disabled:bg-gray-400'
-              ${isSubmitting ? 'bg-indigo-300 cursor-not-allowed' : 'bg-black hover:bg-gray-700'}
-            `}
-          >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
-          </button>
-        </div>
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`px-8 py-3 ${
+                isSubmitting
+                  ? 'bg-indigo-300 cursor-not-allowed'
+                  : 'bg-black hover:bg-gray-700'
+              } text-white font-medium transition disabled:bg-gray-400`}
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
+          </div>
           {formStatus && (
             <p
-              className={`text-center text-sm text-red-600 font-quicksand mt-2 ${
-                formStatus.includes('Sent') ? 'text-black' : 'text-red-950'
+              className={`text-center text-sm font-quicksand mt-2 ${
+                formStatus.includes('Sent') ? 'text-black' : 'text-red-600'
               }`}
               role="alert"
             >
@@ -164,7 +173,7 @@ export default function Contact() {
             </p>
           )}
         </form>
-    </div>
-        </>
+      </motion.div>
+    </>
   );
 }

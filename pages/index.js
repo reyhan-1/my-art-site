@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
+
 export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
@@ -9,15 +11,19 @@ export default function Home() {
     setShowVideo(true);
   }, []);
 
-
   return (
     <>
       <Head>
         <title>Reyhan Uyanık</title>
       </Head>
 
-      <div className="min-h-screen w-full relative overflow-hidden bg-black">
-        {/* Show black screen for 1 sec before video loads */}
+      <motion.div
+        className="min-h-screen w-full relative overflow-hidden bg-black motion-preset-fade motion-duration-2000"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 2 }}
+      >
         {!showVideo && (
           <div className="absolute inset-0 bg-black z-20"></div>
         )}
@@ -49,8 +55,7 @@ export default function Home() {
             — Dead Poet’s Society
           </p>
         </div>
-      </div>
-
+      </motion.div>
     </>
   );
 }
