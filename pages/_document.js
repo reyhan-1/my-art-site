@@ -5,10 +5,7 @@ export default function Document(props) {
   const isHomePage = currentPath === '/';
 
   return (
-    <Html
-      lang="en"
-      style={{ backgroundColor: isHomePage ? 'black' : 'white' }}
-    >
+  <Html lang="en" style={{ backgroundColor: 'white' }}>
       <Head>
         {/* Font preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
