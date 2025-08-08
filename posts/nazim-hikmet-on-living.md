@@ -1,9 +1,9 @@
 ---
 title: "On Living"
 date: "AUGUST 6, 2025"
-image: "/nazim-hikmet.webp"
+image: "/squirrel.avif"
 categories: ["poems"]
-imagetitle: "Nâzım Hikmet, 1902–1963"
+imagetitle: "September 18, 2022 | Central Park"
 painter: ""
 excerpt: "The true meaning of being alive is to take it seriously like a squirrel."
 ---
@@ -87,3 +87,4 @@ You must feel the grief right now.
 You must love this world so much  
 to be able to say "I lived"...          
 <span style="font-family: 'Quicksand', cursive;">1948</span>
+

@@ -21,29 +21,45 @@ export default function ArtTalks({ posts }) {
 
   useEffect(() => {
     const filterPosts = () => {
+      let updatedPosts;
       if (selectedCategories.length === 0) {
-        setFilteredPosts(posts);
+        updatedPosts = posts;
       } else {
-        const filtered = posts.filter((post) =>
+        updatedPosts = posts.filter((post) =>
           post.categories?.some((cat) => selectedCategories.includes(cat))
         );
-        setFilteredPosts(filtered);
       }
+      // Sort newest to oldest
+      updatedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      setFilteredPosts(updatedPosts);
     };
     filterPosts();
   }, [selectedCategories, posts]);
 
-  const allCategories = ['movies','museums', 'painters', 'paintings',  'poems', 'poets'];
+  const allCategories = [
+    'movies',
+    'museums',
+    'painters',
+    'paintings',
+    'poems',
+    'poets',
+    'sculptures',
+  ];
 
   return (
     <>
       <Head>
         <title>Art Talks</title>
-        <meta name="description" content="Explore blog posts about movies, museums, painters, paintings, poems, and poets." />
+        <meta
+          name="description"
+          content="Explore blog posts about movies, museums, painters, paintings, poems, and poets."
+        />
       </Head>
 
       <div className="px-6 md:px-10 py-16 bg-white">
-        <h6 className="text-4xl text-center font-serif m-10 text-black">Art Talks</h6>
+        <h6 className="text-4xl text-center font-serif m-10 text-black">
+          Art Talks
+        </h6>
 
         {/* Category Filter Buttons */}
         <div className="flex flex-wrap gap-3 justify-center mb-10">
@@ -62,40 +78,45 @@ export default function ArtTalks({ posts }) {
           ))}
         </div>
 
-                <div className="flex flex-wrap gap-3 justify-center mb-10">
-        <p className="text-sm font-urbanist text-center text-gray-700">
-          Movies I think about after days, or poems that move me everytime I read.
-          Paintings and painters who opened my eyes to color, to visual story telling, expression.
-          Each essay here is my opinion, written by me. Proudly no AI. Enjoy!
-        </p>
-                </div>
+        <div className="flex flex-wrap gap-3 justify-center mb-10">
+          <p className="text-sm font-urbanist text-center text-gray-700">
+            Movies I think about after days, or poems that move me everytime I
+            read. Paintings and painters who opened my eyes to color, to visual
+            story telling, expression. Each essay here is my opinion, written by
+            me. Proudly no AI. Enjoy!
+          </p>
+        </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-10">
-          {filteredPosts.map(({ slug, title, date, excerpt, image, categories }, index) => (
-            <Link
-              href={`/art-talks/${slug}`}
-              key={slug}
-              className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white"
-            >
-              <figure className="relative w-full h-80">
-                <Image
-                  src={image || '/default-image.jpg'}
-                  alt={title}
-                  fill
-                  className="object-cover"
-                  loading={index < 3 ? 'eager' : 'lazy'}
-                />
-              </figure>
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">
-                  {title}
-                </h2>
-                <p className="text-sm text-gray-600 mb-4">{excerpt}</p>
-                <p className="text-sm text-center font-quicksand text-gray-600 mb-4">{date}</p>
-              </div>
-            </Link>
-          ))}
+          {filteredPosts.map(
+            ({ slug, title, date, excerpt, image, categories }, index) => (
+              <Link
+                href={`/art-talks/${slug}`}
+                key={slug}
+                className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white"
+              >
+                <figure className="relative w-full h-80">
+                  <Image
+                    src={image || '/default-image.jpg'}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                    loading={index < 3 ? 'eager' : 'lazy'}
+                  />
+                </figure>
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">
+                    {title}
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-4">{excerpt}</p>
+                  <p className="text-sm text-center font-quicksand text-gray-600 mb-4">
+                    {date}
+                  </p>
+                </div>
+              </Link>
+            )
+          )}
         </div>
       </div>
     </>
@@ -122,10 +143,12 @@ export async function getStaticProps() {
     };
   });
 
+  // Sort newest to oldest
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
   return {
     props: {
       posts,
     },
   };
 }
-
