@@ -88,3 +88,9 @@ You must love this world so much
 to be able to say "I lived"...          
 <span style="font-family: 'Quicksand', cursive;">1948</span>
 
+<div align="center">
+<video width="600" controls >
+  <source src="/squirrel.webm" />
+  Your browser does not support the video tag.
+</video>
+</div>
