@@ -108,6 +108,15 @@ export default function Navbar() {
           </a>
           </div>
         </div>
+        <nav className="space-y-2 font-quicksand">
+          <blockquote className=" italic font-quicksand text-sm text-gray-800">
+            There is one thing one has to have: either a soul that is cheerful by nature,
+            or a soul made cheerful by work, love, art, and knowledge."
+          </blockquote>
+          <p className="font-serif text-right text-sm text-gray-700">
+            — Frederich Nietzsche
+          </p>
+        </nav>
       </div>
     </footer>
   );

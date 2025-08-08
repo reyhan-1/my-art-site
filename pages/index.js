@@ -45,7 +45,7 @@ export default function Home() {
             “Medicine, law, business, engineering, these are all noble pursuits, and
             necessary to sustain life. But poetry, beauty, romance, love, these are what we stay alive for.”
           </blockquote>
-          <p className="text-white text-md md:text-lg font-semibold mt-2 font-urbanist">
+          <p className="text-white text-md md:text-lg font-semibold mt-2 font-serif ">
             — Dead Poet’s Society
           </p>
         </div>
