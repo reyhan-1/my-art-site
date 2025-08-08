@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import artworks from "@/data/artworks";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -23,15 +24,14 @@ export default function Originals() {
         </h2>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-          {isClient &&
-            artworks.map((art, index) => (
-              <div
+          {artworks.map((art, index) =>
+            isClient ? (
+              <motion.div
                 key={art.slug}
-                className="opacity-0 animate-fade-in"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  animationFillMode: "forwards",
-                }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <Link
                   href={`/originals/${art.slug}`}
@@ -63,8 +63,9 @@ export default function Originals() {
                     </h2>
                   </div>
                 </Link>
-              </div>
-            ))}
+              </motion.div>
+            ) : null
+          )}
         </section>
       </div>
     </>
