@@ -53,8 +53,8 @@ export default function SubscribeSection() {
 
   if (subscribed) {
     return (
-      <div className="max-w-xl mx-auto bg-[#f0eae3] px-8 py-12 text-center mt-16">
-        <h2 className="text-3xl font-serif mb-2 text-gray-800">Thanks for subscribing!</h2>
+      <div className="bg-[#f0eae3] px-6 py-16">
+        <h2 className="text-2xl font-serif py-16 text-center mt-16 text-gray-800">Thanks for subscribing!</h2>
       </div>
     );
   }
@@ -110,7 +110,8 @@ export default function SubscribeSection() {
         </div>
 
         {status && (
-          <p className="text-center text-sm text-red-600 mt-2">{status}</p>
+          <p
+              className="text-center text-sm text-red-600 font-quicksand mt-2">{status}</p>
         )}
       </form>
     </section>

@@ -23,8 +23,8 @@ export default function About() {
             />
           </div>
 
-          <div className="prose prose-lg max-w-none leading-relaxed px-14 md:px-0">
-            <p className=" font-quicksand max-w-xl mx-auto mb-10">
+          <div className=" leading-relaxed px-14 md:px-0 text-sm/6">
+            <p className=" font-quicksand max-w-xl mx-auto mb-10 ">
               Hi, I’m <strong>Reyhan Uyanık</strong>, a software engineer with a deep love for creating and colors.
               I’ve worked in fast-paced startups across the US, building full-stack applications and automating systems.
             </p>
@@ -32,16 +32,16 @@ export default function About() {
             <p className=" font-quicksand max-w-xl mx-auto mb-10">I was born in Kalamazoo, Michigan, and have since called Ankara, Boston, and Amsterdam home. Each city shaped me in its own way.</p>
 
             <p className=" font-quicksand max-w-xl mx-auto mb-10">
-              A perfect day for me would definitely include a museum visit (and a glass of wine with a strong nose). I&#39;ve always loved art, paintings for a particular reason.
-              I&#39;ve been doodling/painting for most of my life, but it wasn&#39;t until January 2025 that I finally started taking lessons
+              A perfect day for me would definitely include a museum visit. I&#39;ve always loved art, paintings particularly.
+              I&#39;ve been doodling/painting for most of my life, but it wasn&#39;t until January 2025 that I finally started taking lessons.
            </p>
-          </div>
-        </div>
-      <div className="prose prose-lg max-w-none leading-relaxed px-14 md:px-0">
-        <p className=" font-quicksand max-w-3xl mx-auto mb-10">
+                    <p className=" font-quicksand max-w-3xl mx-auto mb-10">
            And I’m loving every minute of it.  Painting has reminded me how much I love being a student: learning new perspectives that change the way I think and how I see the world.
           Anything that grows wildflowers from the cracks in my brain.
             </p>
+          </div>
+        </div>
+      <div className="leading-relaxed px-14 md:px-0 text-sm/6">
       </div>
         <blockquote className="border-l-4 font-urbanist pl-8 italic text-gray-400 mt-6">
               Ethan Hawke expresses why art is vital so much more eloquently than I can here(especially around the 7th minute):
@@ -57,7 +57,7 @@ export default function About() {
           ></iframe>
         </div>
 
-        <p className=" font-quicksand max-w-3xl mx-auto mb-10">
+        <p className=" font-quicksand max-w-3xl mx-auto mb-10  text-sm/6">
           Thank you for being here. Feel free to explore my{' '}
           <Link href="/originals" className=" hover:text-rose-800  transition">
             paintings

@@ -43,9 +43,11 @@ one is marked by a single white stroke.
 There is an astonishing variety of color and shape, echoing the diversity.  
 Yet amidst this expressive chorus, **one iris stands apart**:
 
-> *A solitary white iris.*  
-> *Tall, erect, almost unmoved by the wind that dances through the others.*  
-> *It’s still an iris, but unmistakably different. It doesn’t sway. It doesn’t blend in.*
+
+A solitary white iris.
+Tall, erect, almost unmoved by the wind that dances through the others.
+It’s still an iris, but unmistakably different. 
+It doesn’t sway. It doesn’t blend in.
 
 If you glance at the bottom right corner, you’ll notice Van Gogh’s signature. Oddly tilted.  
 Trace its angle. It seems to point directly at that lone, fragile white flower.  
@@ -53,7 +55,7 @@ Could this be deliberate? Was he guiding our gaze? Was he trying to tell us some
 
 ---
 
-### Look at the Painting
+<br>
 
 
 Van Gogh was known to see nature as a reflection of his inner world.  
@@ -66,7 +68,7 @@ A soul caught between worlds, in limbo.
 
 ---
 
-### Look at the Painting
+<br>
 
 
 **Irises** might seem like a study of nature. But look closer, and it becomes something else.  

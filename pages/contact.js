@@ -141,19 +141,20 @@ export default function Contact() {
             />
           </div>
 
+        <div className="flex justify-center">
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`w-full py-3 text-white text-lg font-quicksand transition
+            className={`px-8 py-3 bg-gray-800 text-white font-medium transition disabled:bg-gray-400'
               ${isSubmitting ? 'bg-indigo-300 cursor-not-allowed' : 'bg-black hover:bg-gray-700'}
             `}
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
-
+        </div>
           {formStatus && (
             <p
-              className={`mt-4 text-center font-quicksand ${
+              className={`text-center text-sm text-red-600 font-quicksand mt-2 ${
                 formStatus.includes('Sent') ? 'text-black' : 'text-red-950'
               }`}
               role="alert"

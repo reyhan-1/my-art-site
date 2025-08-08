@@ -69,13 +69,11 @@ p {
   .prose h4,
   .prose h5,
   .prose h6 {
-    font-weight: bold;
     color: #1a202c;
   }
 
   .prose blockquote {
-    border-left: 4px solid #2d3748;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     font-style: italic;
     color: #4a5568;
   }
@@ -85,8 +83,4 @@ p {
     padding-left: 1.5rem;
   }
 
-  .prose p {
-    margin-bottom: 1.5rem;
-    font-size: 1.125rem;
-  }
 }
