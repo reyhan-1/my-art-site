@@ -20,7 +20,7 @@ export default function Originals() {
       </Head>
 
       <div className="px-6 md:px-10 py-16 bg-white">
-        <h2 className="text-4xl text-center font-serif m-10">
+        <h2 className="text-4xl text-center font-black font-serif m-10">
           Original Paintings
         </h2>
 
