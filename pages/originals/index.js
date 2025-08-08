@@ -53,14 +53,14 @@ function ImageWithFade({ art, priority }) {
                   onLoad={() => setLoaded(true)}
               />
   {art.sold && (
-    <span className="absolute top-6 left-6 bg-white text-black text-xs font-serif px-8 py-4 tracking-wide z-10 shadow">
+    <span className="absolute top-6 bg-white text-black text-xs font-serif px-8 py-4 tracking-wide z-10 shadow">
       Sold
     </span>
   )}
 </figure>
 
         {/* Info container - hidden by default, shown on hover */}
-        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-center items-center p-6 text-center">
           <h3 className="text-base font-serif mb-2 text-black">
             {art.title}
           </h3>
