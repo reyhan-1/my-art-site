@@ -22,8 +22,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('tailwindcss-motion'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 };
