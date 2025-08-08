@@ -14,7 +14,7 @@ export default function Originals() {
       </Head>
 
       <div className="px-6 md:px-10 py-16 bg-white font-black">
-        <h6 className=" text-4xl text-center font-serif text-black m-10">Original Paintings</h6>
+      <h6 className=" text-4xl text-center font-serif text-black m-10">Originals</h6>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
           {artworks.map((art, index) => (
