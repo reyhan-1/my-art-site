@@ -42,7 +42,7 @@ export default function Navbar() {
               ? 'bg-black'
               : 'bg-transparent'
             : 'bg-white'
-        } ${isHome && !scrolled ? 'text-white' : 'text-black'}`}
+        } ${isHome ? 'text-white' : 'text-black'}`}
 
       >
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between font-quicksand font-light">
