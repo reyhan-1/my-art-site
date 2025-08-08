@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { CartProvider } from '@/context/CartContext';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import SubscribeSection from "@/components/SubscribeSection";
 
 export default function App({ Component, pageProps, router }) {
   return (
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps, router }) {
           <Component {...pageProps} />
         </motion.div>
       </main>
+              <SubscribeSection />
       <Footer />
       <footer className="footer sm:footer-horizontal bg-white footer-center p-4">
         <aside>
