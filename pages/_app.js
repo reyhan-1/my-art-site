@@ -14,18 +14,9 @@ export default function App({ Component, pageProps, router }) {
       </Head>
       <Navbar />
       <main className="accent">
-        {/* Wrap the Component in motion.div */}
-        <motion.div
-          key={router.route} // This makes sure the animation resets on every route change
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Component {...pageProps} />
-        </motion.div>
+            <Component {...pageProps} />
       </main>
-              <SubscribeSection />
+        <SubscribeSection />
       <Footer />
       <footer className="footer sm:footer-horizontal bg-white footer-center p-4">
         <aside>
