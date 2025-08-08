@@ -63,13 +63,13 @@ export default function Post({ post }) {
       </Head>
 
       <article className="max-w-3xl mx-auto px-6 md:px-10 py-16 bg-white">
-        <h6 className=" text-4xl text-center font-serif  m-10">Art Talks: {frontmatter.title}</h6>
+        <h6 className=" text-4xl text-center font-serif text-black m-10">Art Talks: {frontmatter.title}</h6>
 
         {/* Post Title and Excerpt */}
         <p className="text-2xl text-center font-quicksand text-gray-500  m-10">{frontmatter.excerpt}</p>
 
         {/* Category Badges - Clickable with Hover Effect */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap text-gray-400 gap-2 mb-6">
           {allCategories.map((category) => (
             <p key={category} className="font-urbanist">{category}</p>
           ))}
@@ -93,7 +93,7 @@ export default function Post({ post }) {
         )}
 
         {/* Post Content (Markdown) */}
-        <div className="prose prose-lg">
+        <div className="prose prose-lg text-black">
           <Markdown>{content}</Markdown>
         </div>
       </article>

@@ -54,8 +54,8 @@ export default function Contact() {
       </Head>
 
     <div className="px-6 md:px-10 py-16 bg-white">
-      <h6 className=" text-4xl text-center font-serif  m-10">Contact</h6>
-      <p className="text-center font-quicksand max-w-xl mx-auto mb-10">
+      <h6 className=" text-4xl text-center font-serif text-black m-10">Contact</h6>
+      <p className="text-center font-quicksand max-w-xl mx-auto mb-10 text-gray-850">
         Have a question? Don’t hesitate to send me a message about a commission, available work, or upcoming collections.
       </p>
 

@@ -43,14 +43,14 @@ export default function ArtTalks({ posts }) {
       </Head>
 
       <div className="px-6 md:px-10 py-16 bg-white">
-        <h6 className="text-4xl text-center font-serif m-10">Art Talks</h6>
+        <h6 className="text-4xl text-center font-serif m-10 text-black">Art Talks</h6>
 
         {/* Category Filter Buttons */}
         <div className="flex flex-wrap gap-3 justify-center mb-10">
           {allCategories.map((cat) => (
             <button
               key={cat}
-              className={`px-3 py-1 text-sm rounded-full capitalize transition-all duration-200 hover:scale-105 ${
+              className={`px-3 py-1 text-sm capitalize transition-all duration-200 hover:scale-105 ${
                 selectedCategories.includes(cat)
                   ? 'bg-indigo-950 text-white'
                   : 'bg-gray-200 text-gray-800'

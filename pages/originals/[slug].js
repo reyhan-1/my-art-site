@@ -74,15 +74,15 @@ export default function PaintingDetail() {
         {/* Right - Info */}
         <div className="flex-1 flex items-center justify-center">
           <div className="space-y-4 max-w-md">
-            <h1 className="text-3xl font-bold font-italiana">{painting.title}</h1>
-            <p className="text-lg font-mont">
+            <h1 className="text-3xl text-black font-italiana">{painting.title}</h1>
+            <p className="text-lg text-black">
               {painting.dimension}{" | "}{painting.description}
             </p>
             {painting.sold ? (
-              <div className="badge badge-error text-lg p-3">Sold</div>
+              <div className="badge badge-error text-black text-lg p-3">Sold</div>
             ) : (
               <div>
-                <p className="pt-2">
+                <p className="pt-2 text-gray-800 font-quicksand">
                   If you’re interested in purchasing, feel free to email me. I’ll provide shipping details and delivery options based on your location.
                 </p>
                 {/* Uncomment if you want a purchase button */}
