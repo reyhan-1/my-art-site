@@ -62,9 +62,13 @@ export default function ArtTalks({ posts }) {
           ))}
         </div>
 
-        <p className="text-sm text-right pr-10 text-gray-500">
-          P.S.: Nothing here is AI written
+                <div className="flex flex-wrap gap-3 justify-center mb-10">
+        <p className="text-sm font-urbanist text-center text-gray-700">
+          Movies I think about after days, or poems that move me everytime I read.
+          Paintings and painters who opened my eyes to color, to visual story telling, expression.
+          Each essay here is my opinion, written by me. Proudly no AI. Enjoy!
         </p>
+                </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 mt-10">
@@ -124,3 +128,4 @@ export async function getStaticProps() {
     },
   };
 }
+
