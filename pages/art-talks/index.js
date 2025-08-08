@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import path from 'path';
 import fs from 'fs';

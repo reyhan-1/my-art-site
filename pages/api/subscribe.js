@@ -1,3 +1,4 @@
+'use client';
 // /pages/api/subscribe.js
 import nodemailer from 'nodemailer';
 
