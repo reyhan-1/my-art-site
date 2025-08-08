@@ -50,7 +50,7 @@ export default function ArtTalks({ posts }) {
           {allCategories.map((cat) => (
             <button
               key={cat}
-              className={`px-3 py-1 text-sm capitalize transition-all duration-200 hover:scale-105 ${
+              className={`px-3 py-1 text-sm capitalize transition-all duration-200 hover:text-indigo-800 ${
                 selectedCategories.includes(cat)
                   ? 'bg-indigo-950 text-white'
                   : 'bg-gray-200 text-gray-800'
@@ -76,7 +76,7 @@ export default function ArtTalks({ posts }) {
             <Link
               href={`/art-talks/${slug}`}
               key={slug}
-              className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white hover:shadow-md"
+              className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white"
             >
               <figure className="relative w-full h-80">
                 <Image
