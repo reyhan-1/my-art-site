@@ -12,10 +12,8 @@ export default function Originals() {
         <title>Originals | Reyhan Uyanık</title>
       </Head>
 
-      <div className="px-6 md:px-10 py-16 bg-white">
-        <h2 className="text-4xl text-center font-black font-serif m-10">
-          Original Paintings
-        </h2>
+      <div className="px-6 md:px-10 py-16 bg-white font-black">
+      <h6 className=" text-4xl text-center font-serif text-black m-10">Original Paintings</h6>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
           {artworks.map((art, index) => (
@@ -38,7 +36,6 @@ export default function Originals() {
                     fill
                     className="object-cover"
                     priority={index < 4}
-                    loading={index < 4 ? "eager" : "lazy"}
                   />
                 </figure>
                 <div className="p-6">
