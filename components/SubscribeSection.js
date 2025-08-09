@@ -106,7 +106,7 @@ export default function SubscribeSection() {
           <button
             type="submit"
             disabled={loading}
-            className="px-8 py-3 bg-gray-800 text-white font-medium transition disabled:bg-gray-400"
+            className=" btn px-8 py-3 bg-gray-800 text-white font-medium transition disabled:bg-gray-400"
           >
             {loading ? 'Subscribing...' : 'Subscribe'}
           </button>

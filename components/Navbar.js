@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between font-quicksand font-light relative">
           <Link
             href="/"
-            className="text-base tracking-wide whitespace-nowrap hover:text-rose-950 transition-colors"
+            className="text-base tracking-wide whitespace-nowrap hover:text-indigo-900 transition-colors"
           >
             REYHAN UYANIK ART
           </Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
                 href={href}
                 className={`pb-[2px] transition-all duration-300 border-b ${
                   pathname === href ? (isHome ? 'border-white' : 'border-black') : 'border-transparent'
-                } hover:text-rose-950`}
+                } hover:text-indigo-400`}
               >
                 {label}
               </Link>
@@ -107,14 +107,14 @@ export default function Navbar() {
                   aria-label="Close menu"
                   className="absolute top-4 right-4 z-60"
                 >
-                  <XMarkIcon className="w-10 h-10 hover:text-rose-400 transition-colors" />
+                  <XMarkIcon className="w-10 h-10 hover:text-indigo-400 transition-colors" />
                 </button>
 
                 {navLinks.map(({ href, label }) => (
                   <Link
                     key={href}
                     href={href}
-                    className="text-lg text-center font-quicksand tracking-wide hover:text-rose-400"
+                    className="text-lg text-center font-quicksand tracking-wide hover:text-indigo-200"
                     onClick={() => setIsOpen(false)}
                   >
                     {label}

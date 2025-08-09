@@ -59,8 +59,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
         {/* Left Nav */}
         <nav className="space-y-2 font-quicksand">
-          <Link href="/about" className="block">About</Link>
-          <Link href="/contact" className="block">Contact</Link>
+          <Link href="/about" className="block hover:text-indigo-400">About</Link>
+          <Link href="/contact" className="block hover:text-indigo-400">Contact</Link>
         </nav>
 
 

@@ -65,9 +65,9 @@ export default function ArtTalks({ posts }) {
           {allCategories.map((cat) => (
             <button
               key={cat}
-              className={`px-3 py-1 text-sm capitalize transition-all duration-200 hover:text-indigo-800 ${
+              className={`px-3 py-1 text-sm capitalize transition-all duration-200 hover:bg-gray-300 ${
                 selectedCategories.includes(cat)
-                  ? 'bg-indigo-950 text-white'
+                  ? 'bg-indigo-200 text-indigo-950'
                   : 'bg-gray-200 text-gray-800'
               }`}
               onClick={() => toggleCategory(cat)}
