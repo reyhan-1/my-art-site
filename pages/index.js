@@ -40,7 +40,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30 z-10"></div>
 
         {/* Quote content */}
-        <div className="absolute bottom-10 right-4 md:right-12 z-30 max-w-xl text-right px-4">
+        <div className="absolute bottom-16 right-4 md:right-12 z-30 max-w-xl text-right px-4">
           <blockquote className="text-white text-base md:text-base italic font-quicksand">
             “Medicine, law, business, engineering, these are all noble pursuits, and
             necessary to sustain life. But poetry, beauty, romance, love, these are what we stay alive for.”
