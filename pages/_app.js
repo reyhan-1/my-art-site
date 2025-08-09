@@ -1,14 +1,12 @@
 import '@/styles/globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CartProvider } from '@/context/CartContext';
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import SubscribeSection from "@/components/SubscribeSection";
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <CartProvider>
+    <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -25,6 +23,6 @@ export default function App({ Component, pageProps, router }) {
           </p>
         </aside>
       </footer>
-    </CartProvider>
+    </div>
   );
 }
