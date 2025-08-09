@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1b0eabde-3340-416f-9cf5-34fab504b78c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/originals/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/originals/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/art-talks/[slug].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/art-talks/[slug].js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/art-talks/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/art-talks/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/nazim-hikmet-things-i-didnt-know-i-loved.md" beforeDir="false" afterPath="$PROJECT_DIR$/posts/nazim-hikmet-things-i-didnt-know-i-loved.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/nike.md" beforeDir="false" afterPath="$PROJECT_DIR$/posts/nike.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +70,7 @@
       <workItem from="1754217280665" duration="1644000" />
       <workItem from="1754322739897" duration="79248000" />
       <workItem from="1754687669662" duration="957000" />
+      <workItem from="1754737231734" duration="1410000" />
     </task>
     <servers />
   </component>

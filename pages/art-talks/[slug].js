@@ -94,7 +94,7 @@ export default function Post({ post }) {
             </div>
           )}
 
-          <div className="prose prose-lg text-black">
+          <div className="prose prose-lg font-urbanist text-black">
             <Markdown>{content}</Markdown>
           </div>
         </article>

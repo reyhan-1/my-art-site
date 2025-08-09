@@ -29,7 +29,6 @@ export default function ArtTalks({ posts }) {
           post.categories?.some((cat) => selectedCategories.includes(cat))
         );
       }
-      // Sort newest to oldest
       updatedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
       setFilteredPosts(updatedPosts);
     };
@@ -61,7 +60,7 @@ export default function ArtTalks({ posts }) {
           Art Talks
         </h6>
 
-        {/* Category Filter Buttons */}
+        {/* Category Filter */}
         <div className="flex flex-wrap gap-3 justify-center mb-10">
           {allCategories.map((cat) => (
             <button
@@ -79,10 +78,10 @@ export default function ArtTalks({ posts }) {
         </div>
 
         <div className="flex flex-wrap gap-3 justify-center mb-10">
-          <p className="text-sm font-urbanist text-center text-gray-700">
-            Movies I think about after days, or poems that move me everytime I
+          <p className="text-sm font-urbanist text-center text-gray-700 max-w-3xl">
+            Movies I think about after days, or poems that move me every time I
             read. Paintings and painters who opened my eyes to color, to visual
-            story telling, expression. Each essay here is my opinion, written by
+            storytelling, expression. Each essay here is my opinion, written by
             me. Proudly no AI. Enjoy!
           </p>
         </div>
@@ -94,7 +93,7 @@ export default function ArtTalks({ posts }) {
               <Link
                 href={`/art-talks/${slug}`}
                 key={slug}
-                className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white"
+                className="block overflow-hidden shadow-sm transition-shadow duration-300 bg-white group"
               >
                 <figure className="relative w-full h-80">
                   <Image
@@ -104,7 +103,21 @@ export default function ArtTalks({ posts }) {
                     className="object-cover"
                     loading={index < 3 ? 'eager' : 'lazy'}
                   />
+
+                  {/* Hover Overlay with Categories */}
+                  <div className="absolute inset-0 bg-white bg-opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-center items-center p-6 text-center">
+                    {categories?.map((cat) => (
+                      <span
+                        key={cat}
+                        className="text-base font-serif mb-2 text-black capitalize"
+                      >
+                        {cat}
+                      </span>
+                    ))}
+
+                  </div>
                 </figure>
+
                 <div className="p-6">
                   <h2 className="text-xl font-semibold text-gray-900 mb-2 font-noto">
                     {title}
@@ -143,7 +156,6 @@ export async function getStaticProps() {
     };
   });
 
-  // Sort newest to oldest
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return {
