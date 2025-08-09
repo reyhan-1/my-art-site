@@ -60,15 +60,15 @@ function ImageWithFade({ art, priority }) {
               )}
           </figure>
 
-        <div className="absolute inset-0 bg-white opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-center items-center p-6 text-center">
-            <h3 className="text-base font-serif mb-2 text-black">
-                {art.title}
-            </h3>
-            <h2 className="text-sm font-urbanist mb-2 text-gray-600">
-                {art.description}
-            </h2>
+        {/* Info container - hidden by default, shown on hover */}
+        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out flex flex-col justify-center items-center p-6 text-center">
+          <h3 className="text-base font-serif mb-2 text-black">
+            {art.title}
+          </h3>
+          <h2 className="text-sm font-urbanist mb-2 text-gray-600">
+            {art.description}
+          </h2>
         </div>
-
       </Link>
     </motion.div>
   );
