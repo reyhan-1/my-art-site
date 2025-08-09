@@ -19,8 +19,9 @@ export default function About() {
               src="/reyhan.avif"
               alt="Reyhan Uyanık"
               width={400}
-              height={400}
+              height={500}
               className="object-cover"
+              priority
             />
           </div>
 

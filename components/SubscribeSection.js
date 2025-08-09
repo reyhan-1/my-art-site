@@ -78,6 +78,7 @@ export default function SubscribeSection() {
             value={formData.firstName}
             onChange={handleChange}
             required
+            autoComplete="given-name"
           />
           <input
             type="text"
@@ -87,6 +88,7 @@ export default function SubscribeSection() {
             value={formData.lastName}
             onChange={handleChange}
             required
+            autoComplete="family-name"
           />
           <input
             type="email"
@@ -96,6 +98,7 @@ export default function SubscribeSection() {
             value={formData.email}
             onChange={handleChange}
             required
+            autoComplete="email"
           />
         </div>
 

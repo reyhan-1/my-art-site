@@ -8,6 +8,8 @@ painter: ""
 excerpt: "The true meaning of being alive is to take it seriously like a squirrel."
 ---
 
+Another beautiful poem by Nâzım Hikmet.
+
 <br>
 *I*     
 Living is no joke,  

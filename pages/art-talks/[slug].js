@@ -83,8 +83,9 @@ export default function Post({ post }) {
                 src={frontmatter.image}
                 alt={frontmatter.title}
                 title={frontmatter.imagetitle}
-                width={900}
-                height={500}
+                width={800}
+                height={400}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover mx-auto"
               />
               {frontmatter.imagetitle && (

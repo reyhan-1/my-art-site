@@ -74,6 +74,7 @@ export default function Contact() {
                 required
                 className="w-full border border-gray-300 font-urbanist px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                 placeholder="Your first name"
+                autoComplete="given-name"
               />
             </div>
 
@@ -90,6 +91,7 @@ export default function Contact() {
                 required
                 className="w-full border border-gray-300 px-4 py-3 font-urbanist text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                 placeholder="Your last name"
+                autoComplete="family-name"
               />
             </div>
           </div>
@@ -107,6 +109,7 @@ export default function Contact() {
               required
               className="w-full border border-gray-300  font-urbanist px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
               placeholder="you@example.com"
+              autoComplete="email"
             />
           </div>
 
