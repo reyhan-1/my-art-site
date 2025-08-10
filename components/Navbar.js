@@ -48,7 +48,7 @@ export default function Navbar() {
     { href: '/art-talks', label: 'ART TALKS' },
     { href: '/about', label: 'ABOUT' },
     { href: '/contact', label: 'CONTACT' },
-    { href: '/breathing', label: 'BREATHING'}
+    // { href: '/breathing', label: 'BREATHING'}
   ];
 
   return (

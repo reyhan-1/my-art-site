@@ -1,7 +1,6 @@
 'use client';
 import { useRouter } from "next/router";
 import artworks from "@/data/artworks";
-import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import { useState } from "react";
 import Head from "next/head";
@@ -9,7 +8,6 @@ import Head from "next/head";
 export default function PaintingDetail() {
   const router = useRouter();
   const { slug } = router.query;
-  const { addToCart } = useCart();
   const painting = artworks.find((art) => art.slug === slug);
 
   const [selectedImage, setSelectedImage] = useState(0);
@@ -22,11 +20,6 @@ export default function PaintingDetail() {
     } else {
       router.push('/originals#gallery');
     }
-  };
-
-  const handlePurchase = () => {
-    addToCart(painting);
-    alert(`${painting.title} has been added to the cart!`);
   };
 
   return (

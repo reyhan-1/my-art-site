@@ -56,11 +56,10 @@ There is no arrogance, only grace. Her presence does not
 demand anything. It offers calmness. She is the most dead thing, a stone, and alive.
 
 
-Artists of the time loved the three-quarter view, and it’s from that angle
-that she’s most striking.
-
 <div align="center">
   <img src="/nike-34-angle.avif" width="300" height="150">
+    <p style="color: rgba(15,16,61,0.71)"><small>Artists of the time loved the three-quarter view, and it’s from that angle
+that she’s most striking.</small></p>
 </div>
 
 She is Nike, the goddess of Victory. 
