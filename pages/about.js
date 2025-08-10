@@ -25,35 +25,34 @@ export default function About() {
             />
           </div>
 
-          <div className=" leading-relaxed px-14 md:px-0 text-sm/6 text-black">
-            <p className=" font-quicksand max-w-xl mx-auto mb-10 text-black ">
-              Hi, I’m <strong>Reyhan Uyanık</strong>, a software engineer with a deep love for creating and colors.
+          <div className=" text-sm/4 text-black">
+            <p className=" font-quicksand max-w-sm md:max-w-xl mx-auto mb-5 text-black ">
+              Hi, I’m Reyhan Uyanık, a software engineer with a deep love for creating and colors.
               I’ve worked in fast-paced startups across the US, building full-stack applications and automating systems.
               But alongside the code, there’s always been a pull toward the visual creativity and storytelling.
             </p>
-
-            <p className=" font-quicksand max-w-xl mx-auto mb-10 text-black">I was born in Kalamazoo, Michigan, and have
+            <p className=" font-quicksand max-w-sm md:max-w-xl mx-auto mb-5 text-black">I was born in Kalamazoo, Michigan, and have
               since called Ankara, Boston, and Amsterdam home. Each city shaped me in its own way.</p>
-
-            <p className=" font-quicksand max-w-xl mx-auto mb-10 text-black">
+            <p className=" font-quicksand max-w-sm md:max-w-xl mx-auto mb-5 text-black">
               A perfect day for me would definitely include a museum visit. I&#39;ve always loved art, paintings particularly.
               I&#39;ve been doodling/painting for most of my life, but it wasn&#39;t until January 2025 that I finally started taking lessons. And I’m loving every minute of it.
            </p>
-            <p className=" font-quicksand max-w-3xl mx-auto mb-10 text-black">
+            <p className=" font-quicksand max-w-sm md:max-w-xl mx-auto mb-5 text-black">
            Painting has reminded me how much I love being a student. Learning new perspectives that rewire how I think, how I see the world.
           Anything that grows wildflowers from the cracks in my brain.
             </p>
+            <blockquote className="border-l-4 font-urbanist pl-8 italic text-gray-400 mt-10 pr-2">
+              Ethan Hawke expresses why art is vital so much more eloquently than I can here(especially around the 7th minute):
+            </blockquote>
           </div>
         </div>
       <div className="c">
       </div>
-        <blockquote className="border-l-4 font-urbanist pl-8 italic text-gray-400 mt-6">
-              Ethan Hawke expresses why art is vital so much more eloquently than I can here(especially around the 7th minute):
-            </blockquote>
+
         {/* YouTube Embed with consistent horizontal padding */}
         <div className="mt-12 px-6 relative mb-10" style={{ paddingTop: '56.25%' }}>
           <iframe
-            className="absolute top-0 left-0 w-full h-full shadow-lg"
+            className="absolute top-0 left-0 w-full h-full p-4 md:p-0"
             src="https://www.youtube.com/embed/WRS9Gek4V5Q"
             title="Ethan Hawke TED Talk"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -61,7 +60,7 @@ export default function About() {
           ></iframe>
         </div>
 
-        <p className=" font-quicksand p-8 text-black mt-6">
+        <p className=" text-sm/4 font-quicksand max-w-screen-xl p-4 mx-auto mb-5 text-black">
           Thank you for being here. Feel free to explore my{' '}
           <Link href="/originals" className=" hover:text-rose-800  transition text-black">
             paintings
