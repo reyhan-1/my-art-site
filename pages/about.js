@@ -36,10 +36,10 @@ export default function About() {
 
             <p className=" font-quicksand max-w-xl mx-auto mb-10 text-black">
               A perfect day for me would definitely include a museum visit. I&#39;ve always loved art, paintings particularly.
-              I&#39;ve been doodling/painting for most of my life, but it wasn&#39;t until January 2025 that I finally started taking lessons.
+              I&#39;ve been doodling/painting for most of my life, but it wasn&#39;t until January 2025 that I finally started taking lessons. And I’m loving every minute of it.
            </p>
             <p className=" font-quicksand max-w-3xl mx-auto mb-10 text-black">
-           And I’m loving every minute of it.  Painting has reminded me how much I love being a student: learning new perspectives that change the way I think and how I see the world.
+           Painting has reminded me how much I love being a student: learning new perspectives that change the way I think and how I see the world.
           Anything that grows wildflowers from the cracks in my brain.
             </p>
           </div>
