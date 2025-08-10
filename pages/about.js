@@ -29,6 +29,7 @@ export default function About() {
             <p className=" font-quicksand max-w-xl mx-auto mb-10 text-black ">
               Hi, I’m <strong>Reyhan Uyanık</strong>, a software engineer with a deep love for creating and colors.
               I’ve worked in fast-paced startups across the US, building full-stack applications and automating systems.
+              But alongside the code, there’s always been a pull toward the visual creativity and storytelling.
             </p>
 
             <p className=" font-quicksand max-w-xl mx-auto mb-10 text-black">I was born in Kalamazoo, Michigan, and have
@@ -39,7 +40,7 @@ export default function About() {
               I&#39;ve been doodling/painting for most of my life, but it wasn&#39;t until January 2025 that I finally started taking lessons. And I’m loving every minute of it.
            </p>
             <p className=" font-quicksand max-w-3xl mx-auto mb-10 text-black">
-           Painting has reminded me how much I love being a student: learning new perspectives that change the way I think and how I see the world.
+           Painting has reminded me how much I love being a student. Learning new perspectives that rewire how I think, how I see the world.
           Anything that grows wildflowers from the cracks in my brain.
             </p>
           </div>
