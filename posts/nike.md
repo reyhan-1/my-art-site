@@ -40,7 +40,7 @@ I didn't want to imagine her as a 'whole'. She was
 magnificent as she is. I still believe 
 that if she were whole, she would be less moving.
 There's something achingly human in her brokenness. 
-It makes her feel real—like us. She still looks like a goddess. Noble, otherworldly.
+It makes her feel real-like us. She still looks like a goddess. Noble, otherworldly.
 Her wings feel natural, as though they truly belonged to a body.
 Hellenistic statues always awe me with their realism, I never find
 myself questioning the existence of gods.   
